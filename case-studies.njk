@@ -1,0 +1,107 @@
+---
+layout: layouts/base.njk
+permalink: case-studies.html
+root: ""
+title: Results & Case Studies | Green Wing Energy Solutions
+description: Real sites, real measurement. Outcomes from commercial energy optimisation across hospitality, leisure and manufacturing.
+canonical: https://greenwingenergysolutions.com/case-studies
+eleventyExcludeFromCollections: true
+---
+<section class="page-hero">
+  <div class="container">
+    <p class="page-eyebrow">Proof on site</p>
+    <h1>Results</h1>
+    <p class="lead">Real sites, real measurement. We only publish outcomes we can stand behind.</p>
+  </div>
+</section>
+
+<section class="section-light page-section--compact">
+  <div class="container">
+    <div class="grid-4 proof-grid">
+      {% for item in collections.caseStudiesSorted %}
+      <article class="proof-card">
+        <p class="proof-stat">{{ item.data.proofStat }}</p>
+        <p class="proof-label">{{ item.data.proofLabel }}</p>
+        <p class="proof-desc">{{ item.data.proofDesc }}</p>
+      </article>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<blockquote class="client-quote client-quote--page">
+  <div class="container prose-wide">
+    <p>&ldquo;{{ caseStudiesPage.quote }}&rdquo;</p>
+    <footer>{{ caseStudiesPage.quoteAttribution }}, <cite>{{ caseStudiesPage.quoteCite }}</cite></footer>
+  </div>
+</blockquote>
+
+<section class="page-section partner-assurance">
+  <div class="container">
+    <div class="partner-assurance-panel">
+      <div class="partner-assurance-copy">
+        <p class="content-label">{{ caseStudiesPage.partnerTrust.eyebrow }}</p>
+        <h2>{{ caseStudiesPage.partnerTrust.title }}</h2>
+        <p>{{ caseStudiesPage.partnerTrust.body }}</p>
+      </div>
+      <ul class="partner-assurance-list">
+        {% for item in caseStudiesPage.partnerTrust.items %}
+        <li>{{ item }}</li>
+        {% endfor %}
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="page-section">
+  <div class="container">
+    <div class="grid-2 case-grid">
+      {% for item in collections.caseStudiesSorted %}
+      <article class="case-card">
+        <div class="case-card-media">
+          <img src="{{ item.data.image | assetPath(root) }}" alt="{{ item.data.imageAlt }}" loading="lazy">
+        </div>
+        <div class="case-card-body">
+          <p class="sector-label">{{ item.data.sectorLabel }}</p>
+          <p class="case-stat">{{ item.data.stat }}</p>
+          <p class="case-stat-label">{{ item.data.statLabel }}</p>
+          <h3>{{ item.data.title }}</h3>
+          <p><span class="content-label">Challenge</span> {{ item.data.challenge }}</p>
+          <p><span class="content-label">What we did</span> {{ item.data.whatWeDid }}</p>
+          <p><span class="content-label">Result</span> {{ item.data.result }}</p>
+          {% if item.data.links %}
+          <p class="case-card-links">
+            {% for link in item.data.links %}
+              {% if not loop.first %}<span class="footer-sep" aria-hidden="true">·</span>{% endif %}
+              <a href="{{ link.url }}">{{ link.label }}</a>
+            {% endfor %}
+          </p>
+          {% endif %}
+        </div>
+      </article>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+{% if caseStudiesPage.reviews | length %}
+<section class="section-light page-section reviews-section">
+  <div class="container">
+    <div class="reviews-section-header">
+      <p class="content-label">Client feedback</p>
+      <h2>What people say after the work</h2>
+      <p>Short feedback from operators, estate teams and site contacts we have supported. Add more reviews here as they come in.</p>
+    </div>
+    <div class="review-scroll" aria-label="Client feedback carousel">
+      {% for review in caseStudiesPage.reviews %}
+      <article class="review-card">
+        <p>&ldquo;{{ review.quote }}&rdquo;</p>
+        <footer>{{ review.name }}{% if review.context %}, <cite>{{ review.context }}</cite>{% endif %}</footer>
+      </article>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+{% endif %}
+
+{% include "partials/cta-band.njk" %}

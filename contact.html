@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact | Green Wing Energy Solutions</title>
+  <meta name="description" content="Tell us about your estate and we'll arrange an energy review. Call 07942 860052 or email info@greenwingenergysolutions.com">
+  <link rel="canonical" href="https://greenwingenergysolutions.com/contact">
+  <link rel="icon" href="assets/images/greenwing-energy-solutions-logo.jpg" type="image/jpeg">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <header class="site-header" id="site-header"></header>
+  <main id="main-content">
+    <section class="page-hero">
+      <div class="container">
+        <p class="page-eyebrow">Get in touch</p>
+        <h1>Tell us about your estate</h1>
+        <p class="lead">Tell us a little about your sites and we'll arrange an energy review.</p>
+      </div>
+    </section>
+
+    <section class="page-section">
+      <div class="container grid-2 contact-layout">
+        <div class="contact-info">
+          <ol class="contact-steps" aria-label="What happens after you enquire">
+            <li class="contact-steps-step">
+              <span class="contact-steps-num" aria-hidden="true">1</span>
+              <div>
+                <strong>Tell us about your estate</strong>
+                <p>Share your site count, sector and what prompted the enquiry — no obligation.</p>
+              </div>
+            </li>
+            <li class="contact-steps-step">
+              <span class="contact-steps-num" aria-hidden="true">2</span>
+              <div>
+                <strong>Discovery call</strong>
+                <p>We clarify scope, timing and whether an Onsite Discovery Assessment is the right starting point.</p>
+              </div>
+            </li>
+            <li class="contact-steps-step">
+              <span class="contact-steps-num" aria-hidden="true">3</span>
+              <div>
+                <strong>Site assessment</strong>
+                <p>We inspect plant, controls and routines on site — then rank what is worth doing with evidence.</p>
+              </div>
+            </li>
+          </ol>
+
+          <p><span class="contact-label">Phone</span> <a href="tel:07942860052">07942 860052</a></p>
+          <p><span class="contact-label">Email</span> <a href="mailto:info@greenwingenergysolutions.com">info@greenwingenergysolutions.com</a></p>
+          <p><span class="contact-label">Address</span> <span id="contact-address"></span></p>
+          <p class="contact-note">We aim to reply within one working day.</p>
+          <div class="contact-map">
+            <iframe id="contact-map" title="Map: Patch at Bobby's, Bournemouth" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+            <a id="contact-map-link" class="contact-map-link" href="#" target="_blank" rel="noopener noreferrer">Open in Google Maps</a>
+          </div>
+        </div>
+        <form class="contact-panel" data-form="contact">
+          <div class="form-group">
+            <label for="name">Name *</label>
+            <input type="text" id="name" name="name" required autocomplete="name">
+          </div>
+          <div class="form-group">
+            <label for="company">Company</label>
+            <input type="text" id="company" name="company" autocomplete="organization">
+          </div>
+          <div class="form-group">
+            <label for="email">Email *</label>
+            <input type="email" id="email" name="email" required autocomplete="email">
+          </div>
+          <div class="form-group">
+            <label for="phone">Phone</label>
+            <input type="tel" id="phone" name="phone" autocomplete="tel">
+          </div>
+          <div class="form-group">
+            <label for="estate">Number of sites / estate size</label>
+            <input type="text" id="estate" name="estate_size" placeholder="e.g. 12 sites across the South West">
+          </div>
+          <div class="form-group">
+            <label for="message">Message</label>
+            <textarea id="message" name="message"></textarea>
+          </div>
+          <button type="submit" class="btn btn-solid">Arrange an Energy Review</button>
+          <p class="form-message" role="status"></p>
+        </form>
+      </div>
+    </section>
+  </main>
+  <footer class="site-footer" id="site-footer"></footer>
+  <script src="js/site-config.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,40 @@
+---
+layout: layouts/base.njk
+permalink: solutions.html
+root: ""
+title: Solutions | Green Wing Energy Solutions
+description: Technologies we assess and deploy when site conditions suit — refrigeration optimisation, voltage optimisation, FilterPro, EndoTherm, LED lighting and more.
+canonical: https://greenwingenergysolutions.com/solutions
+eleventyExcludeFromCollections: true
+---
+<section class="page-hero">
+  <div class="container">
+    <p class="page-eyebrow">Technologies we assess</p>
+    <h1>Solutions</h1>
+    <p class="lead">The technologies we assess and deploy when a site's conditions suit them. We stay independent — a solution only appears in your roadmap if the measurement says it belongs there.</p>
+  </div>
+</section>
+
+<section class="page-section">
+  <div class="container prose-wide">
+    <p class="text-center lead mb-4">{{ solutionsPage.intro | safe }}</p>
+    {% for group in collections.solutionsByCategory %}
+    <div class="solution-category">
+      <h2>{{ group.category }}</h2>
+      {% for item in group.solutions %}
+      <article class="solution-block">
+        <div class="solution-block-thumb">
+          <img src="{{ item.data.image | assetPath(root) }}" alt="{{ item.data.imageAlt }}" loading="lazy">
+        </div>
+        <div class="solution-block-body">
+          <h3>{{ item.data.title }}</h3>
+          {{ item.templateContent | safe }}
+        </div>
+      </article>
+      {% endfor %}
+    </div>
+    {% endfor %}
+  </div>
+</section>
+
+{% include "partials/cta-band.njk" %}

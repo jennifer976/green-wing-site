@@ -1,0 +1,90 @@
+[build]
+  command = "npm run build"
+  publish = "_site"
+
+[[redirects]]
+  from = "/admin"
+  to = "/admin/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/about-us"
+  to = "/about.html"
+  status = 301
+
+[[redirects]]
+  from = "/about"
+  to = "/about.html"
+  status = 301
+
+[[redirects]]
+  from = "/services"
+  to = "/services.html"
+  status = 301
+
+[[redirects]]
+  from = "/solutions"
+  to = "/solutions.html"
+  status = 301
+
+[[redirects]]
+  from = "/contact"
+  to = "/contact.html"
+  status = 301
+
+[[redirects]]
+  from = "/case-studies"
+  to = "/case-studies.html"
+  status = 301
+
+[[redirects]]
+  from = "/insights"
+  to = "/insights.html"
+  status = 301
+
+[[redirects]]
+  from = "/onsite-discovery-assessment"
+  to = "/onsite-discovery-assessment.html"
+  status = 301
+
+[[redirects]]
+  from = "/discovery-roadmap"
+  to = "/discovery-roadmap.html"
+  status = 301
+
+[[redirects]]
+  from = "/eoaas"
+  to = "/eoaas.html"
+  status = 301
+
+[[redirects]]
+  from = "/insights/proving-savings"
+  to = "/insights/proving-savings.html"
+  status = 301
+
+[[redirects]]
+  from = "/insights/scope-1-2-3"
+  to = "/insights/scope-1-2-3.html"
+  status = 301
+
+[[redirects]]
+  from = "/insights/roadmap-vs-audit"
+  to = "/insights/roadmap-vs-audit.html"
+  status = 301
+
+[[redirects]]
+  from = "/insights/refrigeration-runs-24-7"
+  to = "/insights/refrigeration-runs-24-7.html"
+  status = 301
+
+[[redirects]]
+  from = "/terms-and-policies"
+  to = "/terms-and-policies.html"
+  status = 301
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "DENY"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"

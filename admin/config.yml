@@ -1,0 +1,127 @@
+# Decap CMS — Green Wing Energy Solutions
+# Setup: see CMS-SETUP.md (GitHub + Netlify Identity + Git Gateway)
+
+backend:
+  name: git-gateway
+  branch: main
+
+# Run: npm run cms  (with npm run dev) for local editing without Git
+local_backend: true
+
+media_folder: assets/images
+public_folder: /assets/images
+
+site_url: https://greenwingenergysolutions.com
+display_url: https://greenwingenergysolutions.com
+logo_url: /assets/images/green-wing-logo-full-colour.svg
+
+collections:
+  - name: insights
+    label: Insights (Blog)
+    label_singular: Insight article
+    folder: content/insights
+    create: true
+    slug: "{{slug}}"
+    extension: md
+    format: frontmatter
+    summary: "{{title}} — {{date}}"
+    fields:
+      - { label: Title, name: title, widget: string }
+      - { label: Publish date, name: date, widget: datetime }
+      - { label: SEO description, name: description, widget: text }
+      - { label: Hub excerpt, name: excerpt, widget: text }
+      - { label: Featured image, name: image, widget: image, choose_url: false }
+      - { label: Image alt text, name: imageAlt, widget: string, required: false }
+      - { label: Feature on Insights hub, name: featured, widget: boolean, default: false }
+      - { label: Show Scope 1/2/3 infographic, name: showScopeInfographic, widget: boolean, default: false }
+      - { label: Body, name: body, widget: markdown }
+
+  - name: solutions
+    label: Solutions
+    label_singular: Solution
+    folder: content/solutions
+    create: true
+    slug: "{{slug}}"
+    extension: md
+    format: frontmatter
+    summary: "{{category}} — {{title}}"
+    fields:
+      - { label: Title, name: title, widget: string }
+      - label: Category
+        name: category
+        widget: select
+        options:
+          - "Cooling & refrigeration"
+          - "Power & electricity"
+          - "Heating & combustion"
+          - "Lighting & visibility"
+      - { label: Sort order, name: order, widget: number, value_type: int, min: 1 }
+      - { label: Image, name: image, widget: image, choose_url: false }
+      - { label: Image alt text, name: imageAlt, widget: string }
+      - { label: Description, name: body, widget: markdown }
+
+  - name: case_studies
+    label: Results / Case studies
+    label_singular: Case study
+    folder: content/case-studies
+    create: true
+    slug: "{{slug}}"
+    extension: md
+    format: frontmatter
+    summary: "{{title}}"
+    fields:
+      - { label: Headline, name: title, widget: string }
+      - { label: Sector label, name: sectorLabel, widget: string, hint: "e.g. Hospitality · Air conditioning" }
+      - { label: Stat (large), name: stat, widget: string, hint: "e.g. Up to 30%" }
+      - { label: Stat label, name: statLabel, widget: string }
+      - { label: Challenge, name: challenge, widget: text }
+      - { label: What we did, name: whatWeDid, widget: text }
+      - { label: Result, name: result, widget: text }
+      - { label: Card image, name: image, widget: image, choose_url: false }
+      - { label: Image alt text, name: imageAlt, widget: string }
+      - { label: Proof strip stat, name: proofStat, widget: string }
+      - { label: Proof strip label, name: proofLabel, widget: string }
+      - { label: Proof strip description, name: proofDesc, widget: string }
+      - { label: Sort order, name: order, widget: number, value_type: int, min: 1 }
+      - label: Related links
+        name: links
+        widget: list
+        required: false
+        fields:
+          - { label: Link text, name: label, widget: string }
+          - { label: URL, name: url, widget: string, hint: "e.g. solutions.html or insights/proving-savings.html" }
+
+  - name: settings
+    label: Page settings
+    files:
+      - name: solutions_page
+        label: Solutions page intro
+        file: _data/solutions-page.json
+        fields:
+          - { label: Intro paragraph (HTML allowed), name: intro, widget: text }
+      - name: case_studies_page
+        label: Results page content
+        file: _data/caseStudiesPage.json
+        fields:
+          - { label: Quote, name: quote, widget: text }
+          - { label: Attribution name, name: quoteAttribution, widget: string }
+          - { label: Attribution role/company, name: quoteCite, widget: string }
+          - label: Partner and contractor trust section
+            name: partnerTrust
+            widget: object
+            fields:
+              - { label: Eyebrow, name: eyebrow, widget: string }
+              - { label: Title, name: title, widget: string }
+              - { label: Body, name: body, widget: text }
+              - label: Trust points
+                name: items
+                widget: list
+                field: { label: Point, name: point, widget: string }
+          - label: Client reviews
+            name: reviews
+            widget: list
+            required: false
+            fields:
+              - { label: Quote, name: quote, widget: text }
+              - { label: Name / role, name: name, widget: string }
+              - { label: Context, name: context, widget: string, required: false }

@@ -1,0 +1,25 @@
+---
+description: Homepage is locked — no edits unless the user explicitly requests homepage changes
+globs: index.html,css/styles.css,js/main.js
+alwaysApply: true
+---
+
+# Homepage lock (approved 2026-06-03)
+
+The Green Wing homepage visual polish is **complete and locked**. Do not change it unless the user **explicitly** asks to edit the homepage.
+
+## Do not modify without explicit user request
+
+- `index.html` — full homepage markup and copy
+- Homepage-only sections in `css/styles.css` (hero video, logo marquee, trusted strip, problem/journey/services/proof/roadmap/sectors/FAQ/CTA homepage blocks, footer-slim, section dividers/motifs)
+- Homepage init in `js/main.js` (`initVideoHero`, `initLogoMarquee`, footer render if it affects homepage)
+
+## Allowed without unlocking
+
+- Other site pages (`services.html`, `about.html`, etc.)
+- Non-homepage CSS/JS (e.g. contact form, inner-page layouts)
+- Bug fixes only if the user reports a homepage bug and asks for a fix
+
+## If homepage changes are requested
+
+Confirm scope with the user, make the smallest diff, and do not refactor unrelated homepage sections.
