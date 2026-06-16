@@ -5,7 +5,7 @@
       "alt": "Modern commercial building lobby"
     },
     "roadmap": {
-      "image": "assets/images/pdf-report-example.jpg",
+      "image": "/assets/images/chatgpt-image-jun-16-2026-02_34_11-pm.png",
       "alt": "Energy opportunity roadmap"
     },
     "eoaas": {
@@ -13,63 +13,63 @@
       "alt": "Energy optimisation as a service"
     },
     "groundwork": {
-      "image": "assets/images/Groundwork-Logo.jpg",
+      "image": "/assets/images/untitled-design-2-.png",
       "alt": "Groundwork VCSE Energy Efficiency Scheme"
     }
   },
   "about": {
-    "intro": {
-      "image": "assets/images/about-us-main-img-1.jpg",
-      "alt": "Green Wing team on a commercial site"
-    },
-    "story": {
-      "image": "assets/images/about-us-img-6.jpg",
-      "alt": "Energy assessment on an operating commercial site"
-    },
-    "hospitality": {
-      "image": "assets/images/restaurant-img-1.jpg",
-      "alt": "Hospitality restaurant kitchen"
-    },
-    "hotels": {
-      "image": "assets/images/hotel-img-1.jpg",
-      "alt": "Hotel and leisure estate"
-    },
-    "manufacturing": {
-      "image": "assets/images/manufactoring-img-1.jpg",
-      "alt": "Manufacturing plant"
-    },
-    "commercial": {
-      "image": "assets/images/commercial-img-1.jpg",
-      "alt": "Commercial property"
-    },
-    "whyChooseUs": {
-      "image": "assets/images/why-collaborate-with-us.jpg",
-      "alt": "Green Wing consultant reviewing site data with a client"
+    "jennifer": {
+      "image": "assets/images/albane-brand.png",
+      "alt": "Jennifer Griffiths, Marketing and Operations Manager"
     },
     "jon": {
       "image": "assets/images/jon-cullum.jpg",
       "alt": "Jon Cullum, Managing Director"
     },
-    "jennifer": {
-      "image": "assets/images/albane-brand.png",
-      "alt": "Jennifer Griffiths, Marketing and Operations Manager"
+    "commercial": {
+      "image": "assets/images/commercial-img-1.jpg",
+      "alt": "Commercial property"
+    },
+    "intro": {
+      "image": "assets/images/about-us-main-img-1.jpg",
+      "alt": "Green Wing team on a commercial site"
+    },
+    "hospitality": {
+      "image": "assets/images/restaurant-img-1.jpg",
+      "alt": "Hospitality restaurant kitchen"
+    },
+    "story": {
+      "image": "/assets/images/services-main-img-2.jpg",
+      "alt": "Energy assessment on an operating commercial site"
     },
     "groundwork": {
-      "image": "assets/images/Groundwork-Logo.jpg",
+      "image": "/assets/images/untitled-design-2-.png",
       "alt": "Groundwork VCSE Energy Efficiency Scheme"
+    },
+    "whyChooseUs": {
+      "image": "/assets/images/discovery-assessment-lobby.jpg",
+      "alt": "Green Wing consultant reviewing site data with a client"
+    },
+    "manufacturing": {
+      "image": "assets/images/manufactoring-img-1.jpg",
+      "alt": "Manufacturing plant"
     },
     "auditor": {
       "image": "assets/images/certified-energy-auditor-logo.jpg",
       "alt": "Certified energy auditor"
+    },
+    "hotels": {
+      "image": "assets/images/hotel-img-1.jpg",
+      "alt": "Hotel and leisure estate"
     }
   },
   "servicePages": {
     "eoaas": {
-      "image": "assets/images/reporting-tool-backgrd.jpg",
+      "image": "/assets/images/1780919786212.png",
       "alt": "Energy reporting and monitoring dashboard"
     },
     "roadmap": {
-      "image": "assets/images/pdf-report-example.jpg",
+      "image": "/assets/images/chatgpt-image-jun-16-2026-02_34_11-pm.png",
       "alt": "Sample energy opportunity roadmap"
     },
     "onsite": {
@@ -87,8 +87,29 @@
       "alt": "Cote"
     },
     "groundwork": {
-      "image": "assets/images/Groundwork-Logo.jpg",
+      "image": "/assets/images/untitled-design-2-.png",
       "alt": "Groundwork"
+    },
+    "restaurants": {
+      "image": "/assets/images/chatgpt-image-jun-16-2026-04_07_46-pm.png",
+      "alt": "Modern British pub and restaurant exterior with outdoor dining and landscaped entrance",
+      "imageFit": "cover",
+      "imagePosition": "center center",
+      "imageZoom": 1
+    },
+    "commercial": {
+      "image": "/assets/images/1779187510518.png",
+      "alt": "Modern commercial office building with landscaped entrance and contemporary glass façade",
+      "imageFit": "cover",
+      "imagePosition": "center center",
+      "imageZoom": 1
+    },
+    "leisure": {
+      "imageFit": "cover",
+      "imagePosition": "center center",
+      "imageZoom": 1,
+      "image": "/assets/images/chatgpt-image-jun-16-2026-04_11_53-pm.png",
+      "alt": "Modern hotel exterior with landscaped entrance, contemporary architecture and illuminated guest arrival area"
     }
   }
 }
