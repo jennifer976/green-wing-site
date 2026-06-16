@@ -2,7 +2,7 @@
 title: Dynamic Burner Management
 category: Heating & combustion
 order: 7
-image: assets/images/solutions-main-img-2.jpg
+image: /assets/images/chatgpt-image-jun-16-2026-02_10_23-pm.png
 imageAlt: Commercial boiler plant
 ---
 
