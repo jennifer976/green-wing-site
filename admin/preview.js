@@ -286,5 +286,7 @@
   window.CMS.registerPreviewStyle('/css/styles.css');
   window.CMS.registerPreviewStyle('/admin/preview.css');
   window.CMS.registerPreviewTemplate('insights', InsightPreview);
-  window.CMS.registerPreviewTemplate('settings', SettingsPreview);
+  window.CMS.registerPreviewTemplate('homepage_images', SettingsPreview);
+  window.CMS.registerPreviewTemplate('other_page_images', SettingsPreview);
+  window.CMS.registerPreviewTemplate('page_text', SettingsPreview);
 })();

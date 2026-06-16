@@ -60,17 +60,19 @@ Run `npm run build` to preview the full site in `_site/`.
 
 | Section | What it controls |
 |---------|------------------|
-| **Insights (Blog)** | New posts, dates, images, body copy; optional “feature on hub” and Scope infographic toggle |
-| **Solutions** | Each technology block — title, category, image, description |
-| **Results / Case studies** | Each result card + stats strip at top |
-| **Page settings** | Solutions intro text; Results page content; Homepage images; Other page images |
+| **Blog articles** | New posts, dates, images, body copy; optional “feature on hub” and Scope infographic toggle |
+| **Homepage images** | Main homepage visuals and square sector tile images |
+| **Other page images** | Services, About, individual service pages and Terms/Policies images |
+| **Solutions / technologies** | Each technology block — title, category, image, description |
+| **Results / case studies** | Each result card + stats strip at top |
+| **Page text / reviews** | Solutions intro text; Results page trust text and reviews |
 | **Media** | Upload images to `assets/images/` (use in any collection) |
 
 ---
 
 ## Adding a new blog post
 
-1. Admin → **Insights** → **New Insight**
+1. Admin → **Blog articles** → **New Blog article**
 2. Fill title, date, excerpt, description, image
 3. Write body in Markdown
 4. Publish — Netlify rebuilds the site (1–2 minutes)
@@ -81,7 +83,7 @@ The post appears on `/insights` and at `/insights/your-slug.html`.
 
 ## Adding or changing a solution
 
-1. Admin → **Solutions** → edit or **New Solution**
+1. Admin → **Solutions / technologies** → edit or **New Solution**
 2. Pick **category** (controls which group it appears under)
 3. Set **sort order** (lower = higher in the list)
 4. Upload **image** and write description (Markdown)
@@ -90,7 +92,7 @@ The post appears on `/insights` and at `/insights/your-slug.html`.
 
 ## Changing homepage images
 
-1. Admin → **Page settings** → **Homepage images**
+1. Admin → **Homepage images** → **Edit homepage images**
 2. Replace the image in the section you want to change
 3. Keep the alt text short and descriptive
 4. Publish — Netlify rebuilds the site (1–2 minutes)
@@ -101,7 +103,7 @@ This controls the main editable homepage images only, not the homepage copy or l
 
 ## Changing images on other pages
 
-1. Admin → **Page settings** → **Other page images**
+1. Admin → **Other page images** → **Edit other page images**
 2. Find the page/section image you want to replace
 3. Upload or choose the replacement image
 4. Keep the alt text short and descriptive
