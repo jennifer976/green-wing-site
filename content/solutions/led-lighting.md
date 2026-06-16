@@ -2,7 +2,7 @@
 title: LED Lighting
 category: Lighting & visibility
 order: 9
-image: assets/images/commercial-img-1.jpg
+image: /assets/images/chatgpt-image-jun-16-2026-02_37_03-pm.png
 imageAlt: Commercial building lighting
 ---
 
