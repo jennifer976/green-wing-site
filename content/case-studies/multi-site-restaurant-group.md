@@ -3,10 +3,13 @@ title: A multi-site restaurant group
 sectorLabel: Hospitality · Air conditioning
 stat: Up to 30%
 statLabel: Cooling energy reduction
-challenge: High cooling energy across a branded restaurant estate with inconsistent plant settings.
-whatWeDid: Site discovery, refrigeration and cooling optimisation assessment, ranked roadmap with measurement plan.
-result: Up to 30% cooling energy reduction on suitable sites — verified against baseline meter data and operating hours.
-image: assets/images/discovery-assessment-lobby.jpg
+challenge: High cooling energy across a branded restaurant estate with
+  inconsistent plant settings.
+whatWeDid: Site discovery, refrigeration and cooling optimisation assessment,
+  ranked roadmap with measurement plan.
+result: Up to 30% cooling energy reduction on suitable sites — verified against
+  baseline meter data and operating hours.
+image: /assets/images/3c723a08-c7e6-48fd-85bc-d12827dbfcbb.png
 imageAlt: Commercial restaurant estate — cooling plant assessment
 proofStat: Up to 30%
 proofLabel: Cooling energy
