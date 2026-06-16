@@ -4,9 +4,11 @@ sectorLabel: Hospitality · Heating
 stat: Up to 15%
 statLabel: Gas energy cost saving
 challenge: Rising gas costs across a mixed estate of wet-led and food-led sites.
-whatWeDid: Heating circuit review, EndoTherm suitability testing, operational quick wins prioritised in roadmap.
-result: Up to 15% gas energy cost saving on closed-circuit heating where conditions suited — verified via degree-day normalised consumption.
-image: assets/images/solutions-img-4.jpg
+whatWeDid: Heating circuit review, EndoTherm suitability testing, operational
+  quick wins prioritised in roadmap.
+result: Up to 15% gas energy cost saving on closed-circuit heating where
+  conditions suited — verified via degree-day normalised consumption.
+image: /assets/images/1efdde09-23fc-48c3-8844-ee437036d0bc.png
 imageAlt: Commercial pub heating system
 proofStat: Up to 15%
 proofLabel: Gas heating
