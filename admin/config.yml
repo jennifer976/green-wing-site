@@ -32,6 +32,38 @@ collections:
       - { label: Hub excerpt, name: excerpt, widget: text, hint: "Short summary shown on the Insights listing page." }
       - { label: Featured image, name: image, widget: image, choose_url: false, hint: "Upload or choose the main image for the article card and article header." }
       - { label: Image alt text, name: imageAlt, widget: string, required: false, hint: "Describe the image for accessibility. Leave blank only if decorative." }
+      - label: Image fit
+        name: imageFit
+        widget: select
+        default: cover
+        hint: "Cover fills the image area and crops edges. Contain shows the whole image with possible empty space."
+        options:
+          - { label: "Fill area / crop edges", value: cover }
+          - { label: "Show whole image", value: contain }
+      - label: Image focal point
+        name: imagePosition
+        widget: select
+        default: center center
+        hint: "Choose which part of the image should stay visible when it is cropped."
+        options:
+          - { label: "Centre", value: "center center" }
+          - { label: "Top", value: "center top" }
+          - { label: "Bottom", value: "center bottom" }
+          - { label: "Left", value: "left center" }
+          - { label: "Right", value: "right center" }
+          - { label: "Top left", value: "left top" }
+          - { label: "Top right", value: "right top" }
+          - { label: "Bottom left", value: "left bottom" }
+          - { label: "Bottom right", value: "right bottom" }
+      - label: Image zoom
+        name: imageZoom
+        widget: number
+        default: 1
+        value_type: float
+        min: 1
+        max: 1.8
+        step: 0.05
+        hint: "Use this to zoom into the image crop. 1 is normal, 1.2 is slightly closer."
       - { label: Feature on Insights hub, name: featured, widget: boolean, default: false }
       - { label: Show Scope 1/2/3 infographic, name: showScopeInfographic, widget: boolean, default: false }
       - label: Article body

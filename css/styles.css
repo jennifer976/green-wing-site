@@ -1736,11 +1736,20 @@ textarea { min-height: 120px; resize: vertical; }
   display: inline-block;
 }
 
-.insight-featured img {
-  width: 100%;
+.insight-featured-media {
+  display: block;
+  overflow: hidden;
   border-radius: 6px;
-  object-fit: cover;
+}
+
+.insight-featured-media img {
+  width: 100%;
   aspect-ratio: 16/10;
+  object-fit: var(--image-fit, cover);
+  object-position: var(--image-position, center center);
+  transform: scale(var(--image-zoom, 1));
+  transform-origin: var(--image-position, center center);
+  display: block;
 }
 
 .insight-featured time {
@@ -1770,7 +1779,10 @@ textarea { min-height: 120px; resize: vertical; }
 .insight-card-thumb img {
   width: 100%;
   aspect-ratio: 16/10;
-  object-fit: cover;
+  object-fit: var(--image-fit, cover);
+  object-position: var(--image-position, center center);
+  transform: scale(var(--image-zoom, 1));
+  transform-origin: var(--image-position, center center);
   display: block;
 }
 
@@ -1823,7 +1835,10 @@ textarea { min-height: 120px; resize: vertical; }
 .article-hero-image img {
   width: 100%;
   aspect-ratio: 21/9;
-  object-fit: cover;
+  object-fit: var(--image-fit, cover);
+  object-position: var(--image-position, center center);
+  transform: scale(var(--image-zoom, 1));
+  transform-origin: var(--image-position, center center);
   display: block;
 }
 

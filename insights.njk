@@ -8,7 +8,7 @@ canonical: https://greenwingenergysolutions.com/insights
 eleventyExcludeFromCollections: true
 ---
 {% set hubFeatured = collections.insightsSorted | featuredInsight %}
-{% set rest = collections.insightsSorted | otherInsights(hubFeatured.url) %}
+{% set rest = collections.insightsSorted | otherInsights(hubFeatured.url) if hubFeatured else [] %}
 
 <section class="page-hero">
   <div class="container">
@@ -28,13 +28,15 @@ eleventyExcludeFromCollections: true
         <p>{{ hubFeatured.data.excerpt }}</p>
         <span class="link-arrow">Read article →</span>
       </div>
-      <img src="{{ hubFeatured.data.image | assetPath(root) }}" alt="{{ hubFeatured.data.imageAlt or hubFeatured.data.title }}" loading="lazy">
+      <span class="insight-featured-media" style="--image-fit: {{ hubFeatured.data.imageFit or 'cover' }}; --image-position: {{ hubFeatured.data.imagePosition or 'center center' }}; --image-zoom: {{ hubFeatured.data.imageZoom or 1 }};">
+        <img src="{{ hubFeatured.data.image | assetPath(root) }}" alt="{{ hubFeatured.data.imageAlt or hubFeatured.data.title }}" loading="lazy">
+      </span>
     </a>
 
     <div class="grid-3">
       {% for post in rest %}
       <a href="insights/{{ post.fileSlugStem }}.html" class="insight-card has-thumb">
-        <span class="insight-card-thumb"><img src="{{ post.data.image | assetPath(root) }}" alt="" loading="lazy"></span>
+        <span class="insight-card-thumb" style="--image-fit: {{ post.data.imageFit or 'cover' }}; --image-position: {{ post.data.imagePosition or 'center center' }}; --image-zoom: {{ post.data.imageZoom or 1 }};"><img src="{{ post.data.image | assetPath(root) }}" alt="" loading="lazy"></span>
         <time datetime="{{ post.date | isoDate }}">{{ post.date | readableDate }}</time>
         <h3>{{ post.data.title }}</h3>
         <p>{{ post.data.excerpt }}</p>
