@@ -20,6 +20,19 @@ layout: layouts/base.njk
       {% include "partials/scope-infographic.njk" %}
     {% endif %}
     {{ content | safe }}
+    {% set shareUrl = 'https://greenwingenergysolutions.com' + page.url %}
+    {% set shareTitle = title + ' | Green Wing Energy Solutions' %}
+    <aside class="article-share" aria-label="Share this article">
+      <h2>Share this insight</h2>
+      <div class="article-share-links">
+        <a href="https://www.linkedin.com/sharing/share-offsite/?url={{ shareUrl | urlEncode }}" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        <a href="https://www.facebook.com/sharer/sharer.php?u={{ shareUrl | urlEncode }}" target="_blank" rel="noopener noreferrer">Facebook</a>
+        <a href="https://twitter.com/intent/tweet?url={{ shareUrl | urlEncode }}&text={{ shareTitle | urlEncode }}" target="_blank" rel="noopener noreferrer">X</a>
+        <a href="mailto:?subject={{ shareTitle | urlEncode }}&body={{ shareUrl | urlEncode }}">Email</a>
+        <button type="button" data-copy-link="{{ shareUrl }}">Copy link</button>
+      </div>
+      <p class="article-share-status" aria-live="polite"></p>
+    </aside>
     <p><a href="{{ root }}contact.html" class="btn btn-solid btn-arrow">Arrange an Energy Review</a></p>
     {% set related = collections.insightsSorted | relatedInsights(page.url) %}
     {% if related.length %}

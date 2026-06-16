@@ -1,3 +1,4 @@
+const path = require('path');
 const solutionsCategories = require('./_data/solutions-categories.json');
 
 module.exports = function (eleventyConfig) {
@@ -7,18 +8,17 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy('admin');
   eleventyConfig.addPassthroughCopy('robots.txt');
 
-  const staticPages = [
-    'index.html',
-    'about.html',
-    'about-us.html',
-    'contact.html',
-    'services.html',
-    'discovery-roadmap.html',
-    'eoaas.html',
-    'onsite-discovery-assessment.html',
-    'terms-and-policies.html',
-  ];
-  staticPages.forEach((file) => eleventyConfig.addPassthroughCopy(file));
+  eleventyConfig.addGlobalData('eleventyComputed', {
+    permalink: (data) => {
+      const inputPath = data.page && data.page.inputPath;
+      if (!inputPath || !inputPath.endsWith('.html')) return data.permalink;
+
+      const stem = data.page.filePathStem && data.page.filePathStem.replace(/^\/+/, '');
+      if (stem) return `${stem}.html`;
+
+      return path.basename(inputPath);
+    },
+  });
 
   eleventyConfig.addFilter('readableDate', (value) => {
     const d = value instanceof Date ? value : new Date(value);
@@ -30,8 +30,14 @@ module.exports = function (eleventyConfig) {
     return d.toISOString().slice(0, 10);
   });
 
+  eleventyConfig.addFilter('urlEncode', (value) => encodeURIComponent(String(value || '')));
+
   eleventyConfig.addCollection('insightsSorted', (api) =>
-    api.getFilteredByTag('insight').sort((a, b) => b.date - a.date)
+    api.getFilteredByTag('insight').sort((a, b) => {
+      const bDate = new Date(b.data.date || b.date).getTime();
+      const aDate = new Date(a.data.date || a.date).getTime();
+      return bDate - aDate;
+    })
   );
 
   eleventyConfig.addCollection('solutionsByCategory', (api) => {
@@ -84,6 +90,6 @@ module.exports = function (eleventyConfig) {
       data: '_data',
       output: '_site',
     },
-    templateFormats: ['md', 'njk'],
+    templateFormats: ['html', 'md', 'njk'],
   };
 };

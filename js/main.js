@@ -298,6 +298,36 @@
     }
   }
 
+  function initArticleShare() {
+    document.addEventListener('click', async (e) => {
+      const button = e.target.closest('[data-copy-link]');
+      if (!button) return;
+
+      const url = button.dataset.copyLink || window.location.href;
+      const share = button.closest('.article-share');
+      const status = share?.querySelector('.article-share-status');
+
+      try {
+        if (navigator.clipboard?.writeText) {
+          await navigator.clipboard.writeText(url);
+        } else {
+          const input = document.createElement('input');
+          input.value = url;
+          input.setAttribute('readonly', '');
+          input.style.position = 'absolute';
+          input.style.left = '-9999px';
+          document.body.appendChild(input);
+          input.select();
+          document.execCommand('copy');
+          input.remove();
+        }
+        if (status) status.textContent = 'Link copied.';
+      } catch (error) {
+        if (status) status.textContent = 'Could not copy automatically. Please copy the address from your browser.';
+      }
+    });
+  }
+
   function initContactInfo() {
     const site = S();
     const addressEl = document.getElementById('contact-address');
@@ -519,6 +549,7 @@
     initFaq();
     initVideoHero();
     initLogoMarquee();
+    initArticleShare();
     initHeaderScroll();
     initScrollReveal();
     initLightbox();

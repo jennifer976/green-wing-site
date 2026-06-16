@@ -1,0 +1,46 @@
+{
+  "heroPoster": "assets/images/hm-pg-bkgrd-img.jpg",
+  "heroVideo": "assets/images/Resize-video-project.mp4",
+  "problem": {
+    "image": "assets/images/why-collaborate-with-us.jpg",
+    "alt": "Energy consultant reviewing plant room equipment with site team"
+  },
+  "discovery": {
+    "image": "assets/images/discovery-assessment-site.png",
+    "alt": "Energy assessor reviewing site data on a tablet in a plant room"
+  },
+  "roadmap": {
+    "image": "assets/images/pdf-report-example.jpg",
+    "alt": "Sample energy opportunity roadmap document"
+  },
+  "sectors": {
+    "hotels": {
+      "image": "assets/images/hotel-img-1.jpg",
+      "alt": "Hotels",
+      "imageFit": "cover",
+      "imagePosition": "center center",
+      "imageZoom": 1
+    },
+    "restaurants": {
+      "image": "assets/images/restaurant-img-1.jpg",
+      "alt": "Pubs and restaurants",
+      "imageFit": "cover",
+      "imagePosition": "center center",
+      "imageZoom": 1
+    },
+    "commercial": {
+      "image": "assets/images/commercial-img-1.jpg",
+      "alt": "Commercial property",
+      "imageFit": "cover",
+      "imagePosition": "center center",
+      "imageZoom": 1
+    },
+    "leisure": {
+      "image": "assets/images/gymn-img-1.jpg",
+      "alt": "Leisure",
+      "imageFit": "cover",
+      "imagePosition": "center center",
+      "imageZoom": 1
+    }
+  }
+}

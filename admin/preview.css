@@ -80,9 +80,89 @@ body {
   justify-content: flex-start;
 }
 
+.cms-home-hero-preview {
+  min-height: 420px;
+}
+
+.cms-home-hero-preview > img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.cms-home-hero-placeholder,
+.cms-image-placeholder {
+  display: grid;
+  place-items: center;
+  min-height: 180px;
+  background: var(--bg-light);
+  color: var(--green-muted);
+  border: 1px dashed rgba(31, 51, 23, 0.24);
+}
+
+.cms-home-image-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.25rem;
+  margin-top: 1.5rem;
+}
+
+.cms-home-image-card {
+  background: #fff;
+  border: 1px solid rgba(31, 51, 23, 0.08);
+  border-top: 2px solid var(--green-accent);
+  overflow: hidden;
+}
+
+.cms-home-image-frame {
+  display: block;
+  overflow: hidden;
+}
+
+.cms-home-image-card--square .cms-home-image-frame {
+  aspect-ratio: 1;
+}
+
+.cms-home-image-card:not(.cms-home-image-card--square) .cms-home-image-frame {
+  aspect-ratio: 16 / 10;
+}
+
+.cms-home-image-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: var(--image-fit, cover);
+  object-position: var(--image-position, center center);
+  transform: scale(var(--image-zoom, 1));
+  transform-origin: var(--image-position, center center);
+  display: block;
+}
+
+.cms-home-image-card div {
+  padding: 1rem;
+}
+
+.cms-home-image-card h3 {
+  margin: 0 0 0.35rem;
+  color: var(--green-deep);
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.cms-home-image-card p {
+  margin: 0;
+  color: var(--green-muted);
+  font-size: 0.9rem;
+}
+
 @media (max-width: 980px) {
   .cms-preview-header .main-nav,
   .cms-preview-header .header-actions {
     display: none;
+  }
+
+  .cms-home-image-grid {
+    grid-template-columns: 1fr;
   }
 }

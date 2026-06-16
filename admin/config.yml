@@ -25,6 +25,7 @@ collections:
     extension: md
     format: frontmatter
     summary: "{{title}} — {{date}}"
+    sortable_fields: ["date", "title"]
     fields:
       - { label: Title, name: title, widget: string, hint: "The main article headline." }
       - { label: Publish date, name: date, widget: datetime, hint: "Controls the order articles appear in." }
@@ -175,3 +176,249 @@ collections:
               - { label: Quote, name: quote, widget: text }
               - { label: Name / role, name: name, widget: string }
               - { label: Context, name: context, widget: string, required: false }
+      - name: homepage_images
+        label: Homepage images
+        file: _data/homepageImages.json
+        fields:
+          - { label: Hero poster image, name: heroPoster, widget: image, choose_url: false, hint: "Fallback image shown before the homepage video loads." }
+          - { label: Hero background video, name: heroVideo, widget: file, choose_url: false, required: false, hint: "Optional MP4 video used behind the homepage hero." }
+          - label: Problem section image
+            name: problem
+            widget: object
+            fields:
+              - { label: Image, name: image, widget: image, choose_url: false }
+              - { label: Alt text, name: alt, widget: string }
+          - label: Discovery service image
+            name: discovery
+            widget: object
+            fields:
+              - { label: Image, name: image, widget: image, choose_url: false }
+              - { label: Alt text, name: alt, widget: string }
+          - label: Roadmap preview image
+            name: roadmap
+            widget: object
+            fields:
+              - { label: Image, name: image, widget: image, choose_url: false }
+              - { label: Alt text, name: alt, widget: string }
+          - label: Sector tile images
+            name: sectors
+            widget: object
+            fields:
+              - label: Hotels
+                name: hotels
+                widget: object
+                fields:
+                  - { label: Image, name: image, widget: image, choose_url: false }
+                  - { label: Alt text, name: alt, widget: string }
+                  - { label: Image fit, name: imageFit, widget: select, default: cover, options: [{ label: "Fill square / crop edges", value: cover }, { label: "Show whole image", value: contain }], hint: "Use fill/crop for most homepage tiles." }
+                  - label: Image focus
+                    name: imagePosition
+                    widget: select
+                    default: center center
+                    options:
+                      - { label: "Centre", value: "center center" }
+                      - { label: "Top", value: "center top" }
+                      - { label: "Bottom", value: "center bottom" }
+                      - { label: "Left", value: "left center" }
+                      - { label: "Right", value: "right center" }
+                  - { label: Image zoom, name: imageZoom, widget: number, default: 1, value_type: float, min: 1, max: 1.8, step: 0.05, hint: "Increase this to zoom the picture inside the square." }
+      - name: other_page_images
+        label: Other page images
+        file: _data/pageImages.json
+        fields:
+          - label: Services page
+            name: services
+            widget: object
+            fields:
+              - label: Discovery service card
+                name: discovery
+                widget: object
+                fields:
+                  - { label: Image, name: image, widget: image, choose_url: false }
+                  - { label: Alt text, name: alt, widget: string }
+              - label: Roadmap service card
+                name: roadmap
+                widget: object
+                fields:
+                  - { label: Image, name: image, widget: image, choose_url: false }
+                  - { label: Alt text, name: alt, widget: string }
+              - label: EOaaS service card
+                name: eoaas
+                widget: object
+                fields:
+                  - { label: Image, name: image, widget: image, choose_url: false }
+                  - { label: Alt text, name: alt, widget: string }
+              - label: Groundwork logo
+                name: groundwork
+                widget: object
+                fields:
+                  - { label: Image, name: image, widget: image, choose_url: false }
+                  - { label: Alt text, name: alt, widget: string }
+          - label: About page
+            name: about
+            widget: object
+            fields:
+              - label: Intro image
+                name: intro
+                widget: object
+                fields:
+                  - { label: Image, name: image, widget: image, choose_url: false }
+                  - { label: Alt text, name: alt, widget: string }
+              - label: Story image
+                name: story
+                widget: object
+                fields:
+                  - { label: Image, name: image, widget: image, choose_url: false }
+                  - { label: Alt text, name: alt, widget: string }
+              - label: Hospitality sector image
+                name: hospitality
+                widget: object
+                fields:
+                  - { label: Image, name: image, widget: image, choose_url: false }
+                  - { label: Alt text, name: alt, widget: string }
+              - label: Hotels sector image
+                name: hotels
+                widget: object
+                fields:
+                  - { label: Image, name: image, widget: image, choose_url: false }
+                  - { label: Alt text, name: alt, widget: string }
+              - label: Manufacturing sector image
+                name: manufacturing
+                widget: object
+                fields:
+                  - { label: Image, name: image, widget: image, choose_url: false }
+                  - { label: Alt text, name: alt, widget: string }
+              - label: Commercial property sector image
+                name: commercial
+                widget: object
+                fields:
+                  - { label: Image, name: image, widget: image, choose_url: false }
+                  - { label: Alt text, name: alt, widget: string }
+              - label: Why operators choose us image
+                name: whyChooseUs
+                widget: object
+                fields:
+                  - { label: Image, name: image, widget: image, choose_url: false }
+                  - { label: Alt text, name: alt, widget: string }
+              - label: Jon image
+                name: jon
+                widget: object
+                fields:
+                  - { label: Image, name: image, widget: image, choose_url: false }
+                  - { label: Alt text, name: alt, widget: string }
+              - label: Jennifer image
+                name: jennifer
+                widget: object
+                fields:
+                  - { label: Image, name: image, widget: image, choose_url: false }
+                  - { label: Alt text, name: alt, widget: string }
+              - label: Groundwork logo
+                name: groundwork
+                widget: object
+                fields:
+                  - { label: Image, name: image, widget: image, choose_url: false }
+                  - { label: Alt text, name: alt, widget: string }
+              - label: Certified energy auditor logo
+                name: auditor
+                widget: object
+                fields:
+                  - { label: Image, name: image, widget: image, choose_url: false }
+                  - { label: Alt text, name: alt, widget: string }
+          - label: Individual service pages
+            name: servicePages
+            widget: object
+            fields:
+              - label: EOaaS page image
+                name: eoaas
+                widget: object
+                fields:
+                  - { label: Image, name: image, widget: image, choose_url: false }
+                  - { label: Alt text, name: alt, widget: string }
+              - label: Roadmap page image
+                name: roadmap
+                widget: object
+                fields:
+                  - { label: Image, name: image, widget: image, choose_url: false }
+                  - { label: Alt text, name: alt, widget: string }
+              - label: Onsite Discovery page image
+                name: onsite
+                widget: object
+                fields:
+                  - { label: Image, name: image, widget: image, choose_url: false }
+                  - { label: Alt text, name: alt, widget: string }
+          - label: Terms and policies logos
+            name: policy
+            widget: object
+            fields:
+              - label: Colets logo
+                name: colets
+                widget: object
+                fields:
+                  - { label: Image, name: image, widget: image, choose_url: false }
+                  - { label: Alt text, name: alt, widget: string }
+              - label: Cote logo
+                name: cote
+                widget: object
+                fields:
+                  - { label: Image, name: image, widget: image, choose_url: false }
+                  - { label: Alt text, name: alt, widget: string }
+              - label: Groundwork logo
+                name: groundwork
+                widget: object
+                fields:
+                  - { label: Image, name: image, widget: image, choose_url: false }
+                  - { label: Alt text, name: alt, widget: string }
+              - label: Pubs and restaurants
+                name: restaurants
+                widget: object
+                fields:
+                  - { label: Image, name: image, widget: image, choose_url: false }
+                  - { label: Alt text, name: alt, widget: string }
+                  - { label: Image fit, name: imageFit, widget: select, default: cover, options: [{ label: "Fill square / crop edges", value: cover }, { label: "Show whole image", value: contain }], hint: "Use fill/crop for most homepage tiles." }
+                  - label: Image focus
+                    name: imagePosition
+                    widget: select
+                    default: center center
+                    options:
+                      - { label: "Centre", value: "center center" }
+                      - { label: "Top", value: "center top" }
+                      - { label: "Bottom", value: "center bottom" }
+                      - { label: "Left", value: "left center" }
+                      - { label: "Right", value: "right center" }
+                  - { label: Image zoom, name: imageZoom, widget: number, default: 1, value_type: float, min: 1, max: 1.8, step: 0.05, hint: "Increase this to zoom the picture inside the square." }
+              - label: Commercial property
+                name: commercial
+                widget: object
+                fields:
+                  - { label: Image, name: image, widget: image, choose_url: false }
+                  - { label: Alt text, name: alt, widget: string }
+                  - { label: Image fit, name: imageFit, widget: select, default: cover, options: [{ label: "Fill square / crop edges", value: cover }, { label: "Show whole image", value: contain }], hint: "Use fill/crop for most homepage tiles." }
+                  - label: Image focus
+                    name: imagePosition
+                    widget: select
+                    default: center center
+                    options:
+                      - { label: "Centre", value: "center center" }
+                      - { label: "Top", value: "center top" }
+                      - { label: "Bottom", value: "center bottom" }
+                      - { label: "Left", value: "left center" }
+                      - { label: "Right", value: "right center" }
+                  - { label: Image zoom, name: imageZoom, widget: number, default: 1, value_type: float, min: 1, max: 1.8, step: 0.05, hint: "Increase this to zoom the picture inside the square." }
+              - label: Leisure
+                name: leisure
+                widget: object
+                fields:
+                  - { label: Image, name: image, widget: image, choose_url: false }
+                  - { label: Alt text, name: alt, widget: string }
+                  - { label: Image fit, name: imageFit, widget: select, default: cover, options: [{ label: "Fill square / crop edges", value: cover }, { label: "Show whole image", value: contain }], hint: "Use fill/crop for most homepage tiles." }
+                  - label: Image focus
+                    name: imagePosition
+                    widget: select
+                    default: center center
+                    options:
+                      - { label: "Centre", value: "center center" }
+                      - { label: "Top", value: "center top" }
+                      - { label: "Bottom", value: "center bottom" }
+                      - { label: "Left", value: "left center" }
+                      - { label: "Right", value: "right center" }
+                  - { label: Image zoom, name: imageZoom, widget: number, default: 1, value_type: float, min: 1, max: 1.8, step: 0.05, hint: "Increase this to zoom the picture inside the square." }

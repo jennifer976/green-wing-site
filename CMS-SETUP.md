@@ -63,7 +63,7 @@ Run `npm run build` to preview the full site in `_site/`.
 | **Insights (Blog)** | New posts, dates, images, body copy; optional “feature on hub” and Scope infographic toggle |
 | **Solutions** | Each technology block — title, category, image, description |
 | **Results / Case studies** | Each result card + stats strip at top |
-| **Page settings** | Solutions intro text; Results page client quote |
+| **Page settings** | Solutions intro text; Results page content; Homepage images; Other page images |
 | **Media** | Upload images to `assets/images/` (use in any collection) |
 
 ---
@@ -85,6 +85,29 @@ The post appears on `/insights` and at `/insights/your-slug.html`.
 2. Pick **category** (controls which group it appears under)
 3. Set **sort order** (lower = higher in the list)
 4. Upload **image** and write description (Markdown)
+
+---
+
+## Changing homepage images
+
+1. Admin → **Page settings** → **Homepage images**
+2. Replace the image in the section you want to change
+3. Keep the alt text short and descriptive
+4. Publish — Netlify rebuilds the site (1–2 minutes)
+
+This controls the main editable homepage images only, not the homepage copy or layout.
+
+---
+
+## Changing images on other pages
+
+1. Admin → **Page settings** → **Other page images**
+2. Find the page/section image you want to replace
+3. Upload or choose the replacement image
+4. Keep the alt text short and descriptive
+5. Publish — Netlify rebuilds the site (1–2 minutes)
+
+Solutions, Results/case studies and Insights/blog images are edited inside their own collections.
 
 ---
 
