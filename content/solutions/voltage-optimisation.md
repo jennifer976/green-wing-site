@@ -2,7 +2,7 @@
 title: Voltage Optimisation
 category: Power & electricity
 order: 3
-image: assets/images/solutions-img-3.jpg
+image: /assets/images/chatgpt-image-jun-16-2026-02_40_17-pm.png
 imageAlt: Commercial electrical distribution
 ---
 
