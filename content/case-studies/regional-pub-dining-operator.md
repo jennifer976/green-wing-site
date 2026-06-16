@@ -8,7 +8,7 @@ whatWeDid: Heating circuit review, EndoTherm suitability testing, operational
   quick wins prioritised in roadmap.
 result: Up to 15% gas energy cost saving on closed-circuit heating where
   conditions suited — verified via degree-day normalised consumption.
-image: /assets/images/1efdde09-23fc-48c3-8844-ee437036d0bc.png
+image: /assets/images/267dbdff-5ea5-4ce4-8556-0cd066eac6a6.png
 imageAlt: Commercial pub heating system
 proofStat: Up to 15%
 proofLabel: Gas heating
