@@ -12,7 +12,7 @@ layout: layouts/base.njk
 <section class="page-section">
   <div class="container prose-wide prose">
     {% if image %}
-    <figure class="article-hero-image" style="--image-fit: {{ imageFit or 'cover' }}; --image-position: {{ imagePosition or 'center center' }}; --image-zoom: {{ imageZoom or 1 }};">
+    <figure class="article-hero-image">
       <img src="{{ image | assetPath(root) }}" alt="{{ imageAlt or title }}" loading="lazy">
     </figure>
     {% endif %}

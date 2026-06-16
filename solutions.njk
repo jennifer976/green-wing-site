@@ -23,7 +23,7 @@ eleventyExcludeFromCollections: true
       <h2>{{ group.category }}</h2>
       {% for item in group.solutions %}
       <article class="solution-block">
-        <div class="solution-block-thumb">
+        <div class="solution-block-thumb" style="--image-fit: {{ item.data.imageFit or 'cover' }}; --image-position: {{ item.data.imagePosition or 'center center' }}; --image-zoom: {{ item.data.imageZoom or 1 }};">
           <img src="{{ item.data.image | assetPath(root) }}" alt="{{ item.data.imageAlt }}" loading="lazy">
         </div>
         <div class="solution-block-body">

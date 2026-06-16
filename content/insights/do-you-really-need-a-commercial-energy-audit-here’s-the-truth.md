@@ -13,9 +13,6 @@ excerpt: Traditional commercial energy audits often identify problems without
   real-time monitoring, and targeted efficiency projects can help reduce costs,
   improve performance, and protect against rising energy charges.
 image: /assets/images/1779187510518.png
-imageFit: cover
-imagePosition: center center
-imageZoom: 1
 featured: false
 showScopeInfographic: false
 ---

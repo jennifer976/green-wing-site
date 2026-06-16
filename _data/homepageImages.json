@@ -16,31 +16,19 @@
   "sectors": {
     "hotels": {
       "image": "assets/images/hotel-img-1.jpg",
-      "alt": "Hotels",
-      "imageFit": "cover",
-      "imagePosition": "center center",
-      "imageZoom": 1
+      "alt": "Hotels"
     },
     "restaurants": {
       "image": "assets/images/restaurant-img-1.jpg",
-      "alt": "Pubs and restaurants",
-      "imageFit": "cover",
-      "imagePosition": "center center",
-      "imageZoom": 1
+      "alt": "Pubs and restaurants"
     },
     "commercial": {
       "image": "assets/images/commercial-img-1.jpg",
-      "alt": "Commercial property",
-      "imageFit": "cover",
-      "imagePosition": "center center",
-      "imageZoom": 1
+      "alt": "Commercial property"
     },
     "leisure": {
       "image": "assets/images/gymn-img-1.jpg",
-      "alt": "Leisure",
-      "imageFit": "cover",
-      "imagePosition": "center center",
-      "imageZoom": 1
+      "alt": "Leisure"
     }
   }
 }

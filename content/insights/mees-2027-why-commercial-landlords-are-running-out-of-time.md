@@ -15,9 +15,6 @@ excerpt: The proposed MEES 2027 deadline is rapidly approaching, and commercial
   identify opportunities, prioritise investments, and improve portfolio
   performance ahead of future EPC requirements.
 image: /assets/images/1780314210052.png
-imageFit: cover
-imagePosition: center center
-imageZoom: 1
 featured: false
 showScopeInfographic: false
 ---

@@ -91,7 +91,7 @@
     var className = square ? 'cms-home-image-card cms-home-image-card--square' : 'cms-home-image-card';
 
     return h('article', { className: className },
-      image ? h('span', { className: 'cms-home-image-frame', style: square ? imageStyle(item) : {} },
+      image ? h('span', { className: 'cms-home-image-frame' },
         h('img', { src: imagePath(image), alt: alt || title })
       ) : h('div', { className: 'cms-image-placeholder' }, 'No image selected'),
       h('div', {},
@@ -256,19 +256,11 @@
         ),
         h('section', { className: 'page-section' },
           h('div', { className: 'container prose-wide prose' },
-            image ? h('figure', { className: 'article-hero-image', style: imageStyle(data) },
+            image ? h('figure', { className: 'article-hero-image' },
               h('img', {
                 src: image,
                 alt: data.imageAlt || data.title || '',
               })
-            ) : null,
-            image ? h('div', { className: 'cms-preview-note cms-preview-image-note' },
-              'Image settings: ',
-              h('strong', {}, data.imageFit || 'cover'),
-              ' · ',
-              data.imagePosition || 'center center',
-              ' · zoom ',
-              data.imageZoom || 1
             ) : null,
             data.showScopeInfographic ? h('div', { className: 'cms-preview-note' },
               'Scope 1 / 2 / 3 infographic will appear here on the live article.'
@@ -283,9 +275,50 @@
     );
   }
 
+  function SolutionPreview(props) {
+    var data = getData(props.entry);
+    var image = imagePath(data.image);
+
+    return h('div', { className: 'cms-site-preview' },
+      SiteHeader(),
+      h('main', { id: 'main-content' },
+        h('section', { className: 'page-hero' },
+          h('div', { className: 'container' },
+            h('p', { className: 'page-eyebrow' }, data.category || 'Solution category'),
+            h('h1', {}, data.title || 'Solution title'),
+            h('p', { className: 'lead' }, 'Use the image fit, focus and zoom controls to make product images sit better in the solution tile.')
+          )
+        ),
+        h('section', { className: 'page-section' },
+          h('div', { className: 'container prose-wide' },
+            h('article', { className: 'solution-block' },
+              image ? h('div', { className: 'solution-block-thumb', style: imageStyle(data) },
+                h('img', { src: image, alt: data.imageAlt || data.title || '' })
+              ) : h('div', { className: 'cms-image-placeholder' }, 'Solution image'),
+              h('div', { className: 'solution-block-body prose' },
+                h('h3', {}, data.title || 'Solution title'),
+                props.widgetFor('body')
+              )
+            ),
+            image ? h('div', { className: 'cms-preview-note cms-preview-image-note' },
+              'Solution image: ',
+              h('strong', {}, data.imageFit || 'cover'),
+              ' · ',
+              data.imagePosition || 'center center',
+              ' · zoom ',
+              data.imageZoom || 1
+            ) : null
+          )
+        )
+      ),
+      SiteFooter()
+    );
+  }
+
   window.CMS.registerPreviewStyle('/css/styles.css');
   window.CMS.registerPreviewStyle('/admin/preview.css');
   window.CMS.registerPreviewTemplate('insights', InsightPreview);
+  window.CMS.registerPreviewTemplate('solutions', SolutionPreview);
   window.CMS.registerPreviewTemplate('homepage_images', SettingsPreview);
   window.CMS.registerPreviewTemplate('other_page_images', SettingsPreview);
   window.CMS.registerPreviewTemplate('page_text', SettingsPreview);

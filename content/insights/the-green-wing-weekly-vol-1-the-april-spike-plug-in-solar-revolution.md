@@ -12,9 +12,6 @@ excerpt: The first edition of The Green Wing Weekly explores a projected rise in
   could benefit business fleets. Practical insights for hospitality, retail, and
   property leaders looking to reduce costs and improve energy performance.
 image: /assets/images/1773849204638.png
-imageFit: cover
-imagePosition: center center
-imageZoom: 1
 featured: true
 showScopeInfographic: false
 ---

@@ -92,22 +92,13 @@
     },
     "restaurants": {
       "image": "/assets/images/chatgpt-image-jun-16-2026-04_07_46-pm.png",
-      "alt": "Modern British pub and restaurant exterior with outdoor dining and landscaped entrance",
-      "imageFit": "cover",
-      "imagePosition": "center center",
-      "imageZoom": 1
+      "alt": "Modern British pub and restaurant exterior with outdoor dining and landscaped entrance"
     },
     "commercial": {
       "image": "/assets/images/1779187510518.png",
-      "alt": "Modern commercial office building with landscaped entrance and contemporary glass façade",
-      "imageFit": "cover",
-      "imagePosition": "center center",
-      "imageZoom": 1
+      "alt": "Modern commercial office building with landscaped entrance and contemporary glass façade"
     },
     "leisure": {
-      "imageFit": "cover",
-      "imagePosition": "center center",
-      "imageZoom": 1,
       "image": "/assets/images/chatgpt-image-jun-16-2026-04_11_53-pm.png",
       "alt": "Modern hotel exterior with landscaped entrance, contemporary architecture and illuminated guest arrival area"
     }

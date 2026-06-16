@@ -63,7 +63,7 @@ Run `npm run build` to preview the full site in `_site/`.
 | **Blog articles** | New posts, dates, images, body copy; optional “feature on hub” and Scope infographic toggle |
 | **Homepage images** | Main homepage visuals and square sector tile images |
 | **Other page images** | Services, About, individual service pages and Terms/Policies images |
-| **Solutions / technologies** | Each technology block — title, category, image, description |
+| **Solutions / technologies** | Each technology block — title, category, image, image fit/zoom, description |
 | **Results / case studies** | Each result card + stats strip at top |
 | **Page text / reviews** | Solutions intro text; Results page trust text and reviews |
 | **Media** | Upload images to `assets/images/` (use in any collection) |
@@ -87,6 +87,7 @@ The post appears on `/insights` and at `/insights/your-slug.html`.
 2. Pick **category** (controls which group it appears under)
 3. Set **sort order** (lower = higher in the list)
 4. Upload **image** and write description (Markdown)
+5. If a product image looks too small, increase **Image zoom** and adjust **Image focus** until it sits well in the tile
 
 ---
 

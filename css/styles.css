@@ -466,10 +466,7 @@ textarea { min-height: 120px; resize: vertical; }
 .sector-tile-image img {
   width: 100%;
   height: 100%;
-  object-fit: var(--image-fit, cover);
-  object-position: var(--image-position, center center);
-  transform: scale(var(--image-zoom, 1));
-  transform-origin: var(--image-position, center center);
+  object-fit: cover;
   display: block;
 }
 
@@ -1679,7 +1676,7 @@ textarea { min-height: 120px; resize: vertical; }
 
 .solution-block {
   display: grid;
-  grid-template-columns: 200px 1fr;
+  grid-template-columns: 240px 1fr;
   gap: 1.75rem;
   align-items: start;
   padding: 1.5rem 0;
@@ -1690,12 +1687,23 @@ textarea { min-height: 120px; resize: vertical; }
   border-bottom: none;
 }
 
-.solution-block-thumb img {
+.solution-block-thumb {
   width: 100%;
   aspect-ratio: 4/3;
-  object-fit: cover;
   border-radius: 6px;
   border: 1px solid rgba(31, 51, 23, 0.08);
+  overflow: hidden;
+  background: #fff;
+}
+
+.solution-block-thumb img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: var(--image-fit, cover);
+  object-position: var(--image-position, center center);
+  transform: scale(var(--image-zoom, 1));
+  transform-origin: var(--image-position, center center);
 }
 
 .solution-block-body h3 {
@@ -1755,10 +1763,7 @@ textarea { min-height: 120px; resize: vertical; }
 .insight-featured-media img {
   width: 100%;
   aspect-ratio: 16/10;
-  object-fit: var(--image-fit, cover);
-  object-position: var(--image-position, center center);
-  transform: scale(var(--image-zoom, 1));
-  transform-origin: var(--image-position, center center);
+  object-fit: cover;
   display: block;
 }
 
@@ -1789,10 +1794,7 @@ textarea { min-height: 120px; resize: vertical; }
 .insight-card-thumb img {
   width: 100%;
   aspect-ratio: 16/10;
-  object-fit: var(--image-fit, cover);
-  object-position: var(--image-position, center center);
-  transform: scale(var(--image-zoom, 1));
-  transform-origin: var(--image-position, center center);
+  object-fit: cover;
   display: block;
 }
 
@@ -1896,10 +1898,7 @@ textarea { min-height: 120px; resize: vertical; }
 .article-hero-image img {
   width: 100%;
   aspect-ratio: 21/9;
-  object-fit: var(--image-fit, cover);
-  object-position: var(--image-position, center center);
-  transform: scale(var(--image-zoom, 1));
-  transform-origin: var(--image-position, center center);
+  object-fit: cover;
   display: block;
 }
 

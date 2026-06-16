@@ -15,9 +15,6 @@ excerpt: Energy efficiency doesn't have to mean disruption. This guide explores
   how a Discovery Assessment can identify opportunities and create a practical
   roadmap for long-term savings.
 image: /assets/images/1777981122248.png
-imageFit: cover
-imagePosition: center center
-imageZoom: 1
 featured: false
 showScopeInfographic: false
 ---

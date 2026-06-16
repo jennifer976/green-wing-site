@@ -13,9 +13,6 @@ excerpt: Energy waste is often hiding in plain sight. From heating empty floors
   and how a strategic approach to energy management can uncover significant
   savings across commercial property portfolios.
 image: /assets/images/1776084308428.png
-imageFit: cover
-imagePosition: center center
-imageZoom: 1
 featured: false
 showScopeInfographic: false
 ---

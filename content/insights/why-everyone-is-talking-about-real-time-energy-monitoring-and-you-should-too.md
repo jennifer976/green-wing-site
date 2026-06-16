@@ -12,9 +12,6 @@ excerpt: Real-time energy monitoring gives businesses a clearer view of how
   underperforming equipment — helping teams move from guesswork to practical,
   evidence-led energy decisions.
 image: /assets/images/1780919786212.png
-imageFit: cover
-imagePosition: center center
-imageZoom: 1
 featured: false
 showScopeInfographic: false
 ---

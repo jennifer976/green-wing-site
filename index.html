@@ -254,25 +254,25 @@
         <p class="text-center lead mb-4">Hospitality, leisure, manufacturing and commercial property — sites where equipment runs hard and small issues repeat across locations.</p>
         <div class="sector-grid">
           <div class="sector-tile">
-            <span class="sector-tile-image" style="--image-fit: {{ homepageImages.sectors.hotels.imageFit or 'cover' }}; --image-position: {{ homepageImages.sectors.hotels.imagePosition or 'center center' }}; --image-zoom: {{ homepageImages.sectors.hotels.imageZoom or 1 }};">
+            <span class="sector-tile-image">
               <img src="{{ homepageImages.sectors.hotels.image | assetPath }}" alt="{{ homepageImages.sectors.hotels.alt }}" loading="lazy" onerror="this.src='assets/images/services-main-img-1.jpg'">
             </span>
             <h4>Hotels</h4>
           </div>
           <div class="sector-tile">
-            <span class="sector-tile-image" style="--image-fit: {{ homepageImages.sectors.restaurants.imageFit or 'cover' }}; --image-position: {{ homepageImages.sectors.restaurants.imagePosition or 'center center' }}; --image-zoom: {{ homepageImages.sectors.restaurants.imageZoom or 1 }};">
+            <span class="sector-tile-image">
               <img src="{{ homepageImages.sectors.restaurants.image | assetPath }}" alt="{{ homepageImages.sectors.restaurants.alt }}" loading="lazy">
             </span>
             <h4>Pubs &amp; restaurants</h4>
           </div>
           <div class="sector-tile">
-            <span class="sector-tile-image" style="--image-fit: {{ homepageImages.sectors.commercial.imageFit or 'cover' }}; --image-position: {{ homepageImages.sectors.commercial.imagePosition or 'center center' }}; --image-zoom: {{ homepageImages.sectors.commercial.imageZoom or 1 }};">
+            <span class="sector-tile-image">
               <img src="{{ homepageImages.sectors.commercial.image | assetPath }}" alt="{{ homepageImages.sectors.commercial.alt }}" loading="lazy" onerror="this.src='assets/images/solutions-main-img-2.jpg'">
             </span>
             <h4>Commercial property</h4>
           </div>
           <div class="sector-tile">
-            <span class="sector-tile-image" style="--image-fit: {{ homepageImages.sectors.leisure.imageFit or 'cover' }}; --image-position: {{ homepageImages.sectors.leisure.imagePosition or 'center center' }}; --image-zoom: {{ homepageImages.sectors.leisure.imageZoom or 1 }};">
+            <span class="sector-tile-image">
               <img src="{{ homepageImages.sectors.leisure.image | assetPath }}" alt="{{ homepageImages.sectors.leisure.alt }}" loading="lazy" onerror="this.src='assets/images/colets-fitness-logo-2.jpg'">
             </span>
             <h4>Leisure</h4>
