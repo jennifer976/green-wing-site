@@ -75,7 +75,7 @@ collections:
             fields:
               - { label: Image, name: image, widget: image, choose_url: false }
               - { label: Alt text, name: alt, widget: string }
-          - label: Roadmap preview image
+          - label: Report and roadmap preview image
             name: roadmap
             widget: object
             fields:
@@ -127,7 +127,7 @@ collections:
                 fields:
                   - { label: Image, name: image, widget: image, choose_url: false }
                   - { label: Alt text, name: alt, widget: string }
-              - label: Roadmap service card
+              - label: Report and roadmap service card
                 name: roadmap
                 widget: object
                 fields:
@@ -225,7 +225,7 @@ collections:
                 fields:
                   - { label: Image, name: image, widget: image, choose_url: false }
                   - { label: Alt text, name: alt, widget: string }
-              - label: Roadmap page image
+              - label: Report and roadmap page image
                 name: roadmap
                 widget: object
                 fields:

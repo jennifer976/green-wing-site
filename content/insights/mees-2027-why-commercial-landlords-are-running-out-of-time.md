@@ -62,15 +62,15 @@ Too many landlords settle for a standard "audit" that tells them what is wrong w
 
 An audit is a history lesson; a Discovery Assessment is a tactical plan. And because the 2026 rush is already underway, landlords who move late risk rushing into whatever solution is available, rather than the one that offers the best ROI.
 
-### The Roadmap: Your Digital Path to Compliance
+### The Report and Roadmap: Your Digital Path to Compliance
 
 Compliance shouldn't be a guessing game. Our approach at Green Wing is designed to take the friction out of the process.
 
 It starts with our **Discovery Assessment**. This is a 2–4 hour on-site visit where we look at everything: lighting, HVAC, insulation, controls, and solar potential. We don’t just tick boxes; we identify where your money is leaking.
 
-Within 24 hours of that visit, you receive **The Roadmap**.
+Within 24 hours of that visit, you receive the **Discovery Assessment Report and Roadmap**.
 
-The Roadmap is a branded, professional report that gives you:
+The report and roadmap is a branded, professional document that gives you:
 
 
 
@@ -114,7 +114,7 @@ We do things differently. Our Discovery Assessment is priced at £1,800 + VAT, b
 
 
 
-We are so confident in our ability to find waste in commercial buildings: especially in high-intensity sectors like gyms, pubs, and hotels: that we stake half our fee on it. Most of our Roadmaps identify between £4,000 and £12,000 in annual savings.
+We are so confident in our ability to find waste in commercial buildings: especially in high-intensity sectors like gyms, pubs, and hotels: that we stake half our fee on it. Most of our Discovery Assessment Reports and Roadmaps identify between £4,000 and £12,000 in annual savings.
 
 Essentially, the Discovery Assessment doesn't just protect you from a £150k fine; it usually pays for itself within weeks.
 

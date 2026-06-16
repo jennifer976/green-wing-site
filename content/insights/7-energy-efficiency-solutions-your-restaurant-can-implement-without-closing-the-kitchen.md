@@ -80,7 +80,7 @@ This is where Green Wing Energy Solutions steps in. We act as your single point 
 
 1. **The Discovery Assessment:** we analyse your current usage and infrastructure without getting in the way of your chefs.
 
-2. **The Roadmap:** We provide a clear, prioritized list of energy efficiency solutions, showing you the projected ROI for each.
+2. **The Discovery Assessment Report and Roadmap:** We provide clear findings and a prioritized list of energy efficiency solutions, showing you the projected ROI for each.
 
 3. **Sourcing and Management:** We source the quotes from trusted contractors, vet the technology, and manage the installation process from start to finish.
 

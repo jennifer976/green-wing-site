@@ -50,13 +50,13 @@ The goal of a Discovery Assessment isn't to produce a long report. It’s to ide
 
 A key part of this process involves looking at your energy monitoring system, or helping you install one if you’re currently flying blind. You cannot manage what you do not measure. Real-time data allows us to see exactly when and where your energy is being used. Often, the biggest savings don't come from expensive new machinery, but from changing the logic of how your current systems run.
 
-**From Discovery to the Roadmap**
+**From Discovery to the Report and Roadmap**
 
-Once the Discovery Assessment is complete, we don’t just hand you the findings. We build your Roadmap. 
+Once the Discovery Assessment is complete, we don’t just hand you the findings. We build your Discovery Assessment Report and Roadmap. 
 
-The Roadmap is a strategic document that outlines a phased approach to energy efficiency. It prioritises actions based on your budget, your business goals, and the projected energy savings. 
+The report and roadmap is a strategic document that outlines a phased approach to energy efficiency. It prioritises actions based on your budget, your business goals, and the projected energy savings. 
 
-A typical Roadmap might look like this:
+A typical report and roadmap might look like this:
 
 1. **Phase 1: Optimisation.** Using data from your energy monitoring system to eliminate waste (e.g., heating systems running in empty buildings or lighting left on overnight).
 
@@ -64,7 +64,7 @@ A typical Roadmap might look like this:
 
 3. **Phase 3: Generation and Storage.** Exploring sustainable energy solutions like solar PV or battery storage to further insulate your business from the grid.
 
-The Roadmap is designed to be a living document. It gives you a clear path forward for the next 12 to 36 months, ensuring that sustainability becomes a core part of your business strategy rather than a one-off project.
+The report and roadmap is designed to be a living document. It gives you a clear path forward for the next 12 to 36 months, ensuring that sustainability becomes a core part of your business strategy rather than a one-off project.
 
 **The Green Wing Difference: We Do the Heavy Lifting**
 
@@ -84,7 +84,7 @@ Most people get through the first step and then give up because they have a busi
 
 Green Wing Energy Solutions was built to solve this. We act as your single point of contact for the entire journey. We aren't just consultants; we are project managers. 
 
-We source quotes from our pre-vetted network of specialist suppliers. We know who does good work and who charges a fair price. Because we manage the process from the initial Discovery Assessment through to the final installation and monitoring, we ensure that the original vision of the Roadmap is actually realised.
+We source quotes from our pre-vetted network of specialist suppliers. We know who does good work and who charges a fair price. Because we manage the process from the initial Discovery Assessment through to the final installation and monitoring, we ensure that the original vision of the report and roadmap is actually realised.
 
 **Is It Time to Pivot?**
 

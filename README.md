@@ -30,7 +30,7 @@ npm run cms    # local admin backend (second terminal)
 | Services | `services.html` |
 | Solutions | `solutions.html` |
 | Onsite Discovery Assessment | `onsite-discovery-assessment.html` |
-| Energy Opportunity Roadmap | `discovery-roadmap.html` |
+| Discovery Assessment Report and Roadmap | `discovery-roadmap.html` |
 | EOaaS | `eoaas.html` |
 | Results / Case Studies | `case-studies.html` |
 | About | `about.html` |

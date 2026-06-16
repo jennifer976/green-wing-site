@@ -16,7 +16,7 @@ proofLabel: Refrigeration
 proofDesc: Food ingredients manufacturer
 order: 2
 links:
-  - label: Energy Opportunity Roadmap
+  - label: Discovery Assessment Report and Roadmap
     url: discovery-roadmap.html
   - label: Refrigeration solutions
     url: solutions.html

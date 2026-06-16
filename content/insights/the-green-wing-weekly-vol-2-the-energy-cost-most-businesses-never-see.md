@@ -72,7 +72,7 @@ To solve a problem, you first have to see it. This is where many businesses fail
 
 By applying a "Technical Blueprint" mindset to energy management, we stop looking at energy as a utility bill and start looking at it as a structural component of the business.
 
-When we map energy usage against actual occupancy data, the waste becomes glaringly obvious. It’s the difference between a standard review of the numbers and a Discovery Assessment that shows where the "energy that delivers no value" is hiding. One tells you what you spent; the other shows you where you can stop spending. The Roadmap then sets out the practical path to fixing it.
+When we map energy usage against actual occupancy data, the waste becomes glaringly obvious. It’s the difference between a standard review of the numbers and a Discovery Assessment that shows where the "energy that delivers no value" is hiding. One tells you what you spent; the other shows you where you can stop spending. The Discovery Assessment Report and Roadmap then sets out the practical path to fixing it.
 
 ### The simple question worth asking
 
@@ -90,7 +90,7 @@ Right now, the conversation around energy is dominated by external factors: geop
 
 The quickest wins: the "low-hanging fruit" that people always talk about but rarely pick: are already inside your building. They are hidden in plain sight within your HVAC schedules, your lighting sensors, and your machinery's idle times.
 
-At Green Wing Energy Solutions, we specialise in finding these gaps. Our [Discovery Assessments](https://greenwingenergysolutions.com/services) aren't just about compliance; they are about operational forensic science. They identify the "energy that delivers no value" across your site, and the Roadmap provides a clear path to fixing it. We look behind the bill to see how your building actually breathes.
+At Green Wing Energy Solutions, we specialise in finding these gaps. Our [Discovery Assessments](https://greenwingenergysolutions.com/services) aren't just about compliance; they are about operational forensic science. They identify the "energy that delivers no value" across your site, and the Discovery Assessment Report and Roadmap provides a clear path to fixing it. We look behind the bill to see how your building actually breathes.
 
 ### Final Thought
 
@@ -104,4 +104,4 @@ If you’re curious about what this looks like in practice for a business like y
 
 Let's stop paying for energy that delivers no value.
 
-**Ready to see what's hidden in your data?** Contact Jon at Green Wing Energy Solutions to discuss how a Discovery Assessment can reveal the "Ghost Energy" in your portfolio, and how a Roadmap can help you fix it.
+**Ready to see what's hidden in your data?** Contact Jon at Green Wing Energy Solutions to discuss how a Discovery Assessment can reveal the "Ghost Energy" in your portfolio, and how a Discovery Assessment Report and Roadmap can help you fix it.
