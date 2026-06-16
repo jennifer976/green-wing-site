@@ -2,7 +2,7 @@
 title: Panoramic Power Monitoring
 category: Power & electricity
 order: 5
-image: assets/images/reporting-tool-backgrd.jpg
+image: /assets/images/chatgpt-image-jun-16-2026-02_25_33-pm.png
 imageAlt: Circuit-level energy monitoring dashboard
 ---
 
