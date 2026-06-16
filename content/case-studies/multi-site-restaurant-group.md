@@ -9,7 +9,7 @@ whatWeDid: Site discovery, refrigeration and cooling optimisation assessment,
   ranked roadmap with measurement plan.
 result: Up to 30% cooling energy reduction on suitable sites — verified against
   baseline meter data and operating hours.
-image: /assets/images/3c723a08-c7e6-48fd-85bc-d12827dbfcbb.png
+image: /assets/images/chatgpt-image-jun-16-2026-04_39_34-pm.png
 imageAlt: Commercial restaurant estate — cooling plant assessment
 proofStat: Up to 30%
 proofLabel: Cooling energy
