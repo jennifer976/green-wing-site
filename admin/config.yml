@@ -26,15 +26,33 @@ collections:
     format: frontmatter
     summary: "{{title}} — {{date}}"
     fields:
-      - { label: Title, name: title, widget: string }
-      - { label: Publish date, name: date, widget: datetime }
-      - { label: SEO description, name: description, widget: text }
-      - { label: Hub excerpt, name: excerpt, widget: text }
-      - { label: Featured image, name: image, widget: image, choose_url: false }
-      - { label: Image alt text, name: imageAlt, widget: string, required: false }
+      - { label: Title, name: title, widget: string, hint: "The main article headline." }
+      - { label: Publish date, name: date, widget: datetime, hint: "Controls the order articles appear in." }
+      - { label: SEO description, name: description, widget: text, hint: "Short Google/search description. Aim for one sentence." }
+      - { label: Hub excerpt, name: excerpt, widget: text, hint: "Short summary shown on the Insights listing page." }
+      - { label: Featured image, name: image, widget: image, choose_url: false, hint: "Upload or choose the main image for the article card and article header." }
+      - { label: Image alt text, name: imageAlt, widget: string, required: false, hint: "Describe the image for accessibility. Leave blank only if decorative." }
       - { label: Feature on Insights hub, name: featured, widget: boolean, default: false }
       - { label: Show Scope 1/2/3 infographic, name: showScopeInfographic, widget: boolean, default: false }
-      - { label: Body, name: body, widget: markdown }
+      - label: Article body
+        name: body
+        widget: markdown
+        hint: "Paste copy directly into the rich text editor, or switch to Markdown/raw mode. Use Heading 2 for section headings, bullets for lists, and the image button to add extra photos."
+        modes: ["rich_text", "raw"]
+        default: |
+          Start with a short opening paragraph that explains the issue and why it matters.
+
+          ## Section heading
+
+          Add the main points here. You can paste formatted copy, use the toolbar, or write Markdown directly.
+
+          - Useful point one
+          - Useful point two
+          - Useful point three
+
+          ## What to do next
+
+          Finish with a practical takeaway or next step.
 
   - name: solutions
     label: Solutions

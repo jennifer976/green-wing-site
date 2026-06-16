@@ -1,0 +1,39 @@
+body {
+  margin: 0;
+  background: #fff;
+}
+
+.cms-site-preview {
+  min-height: 100vh;
+  background: #fff;
+}
+
+.cms-site-preview .page-hero {
+  padding-top: 3rem;
+}
+
+.cms-site-preview .page-section {
+  padding-top: 2.5rem;
+}
+
+.cms-site-preview .back-link a {
+  color: var(--green-accent);
+  text-decoration: none;
+}
+
+.cms-site-preview .prose {
+  font-size: 1rem;
+}
+
+.cms-site-preview .prose > div > :first-child {
+  margin-top: 0;
+}
+
+.cms-preview-note {
+  margin: 1.5rem 0;
+  padding: 1rem 1.25rem;
+  background: var(--bg-light);
+  border-left: 3px solid var(--green-accent);
+  color: var(--green-muted);
+  font-size: 0.95rem;
+}
