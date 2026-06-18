@@ -41,7 +41,7 @@
   <main id="main-content">
     <section class="hero hero-video" id="hero" aria-label="Introduction">
       <div class="hero-media" id="hero-media">
-        <video class="hero-bg-video" autoplay muted loop playsinline preload="auto" poster="{{ homepageImages.heroPoster | assetPath }}">
+        <video class="hero-bg-video" autoplay muted playsinline preload="auto" poster="{{ homepageImages.heroPoster | assetPath }}">
           {% if homepageImages.heroVideo %}
           <source src="{{ homepageImages.heroVideo | assetPath }}" type="video/mp4">
           {% endif %}
