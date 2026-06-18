@@ -267,7 +267,10 @@
             ) : null,
             props.widgetFor('body'),
             SharePreview(),
-            h('p', {}, h('a', { className: 'btn btn-solid btn-arrow' }, 'Arrange an Energy Review'))
+            h('p', {}, 
+              h('a', { className: 'btn btn-solid btn-arrow' }, 'Arrange an Energy Review'),
+              h('span', { className: 'cta-micro', style: { display: 'block', marginTop: '0.5rem' } }, 'Start with a free 15-minute discovery call.')
+            )
           )
         )
       ),

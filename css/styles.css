@@ -1,5 +1,5 @@
 /* Green Wing Energy Solutions — static site styles */
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&family=Roboto+Slab:wght@300;400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Montserrat:wght@400;500;600&family=Roboto+Slab:wght@300;400;500&display=swap');
 
 :root {
   --green-dark: #1f3317;
@@ -19,7 +19,7 @@ html { scroll-behavior: smooth; }
 
 body {
   margin: 0;
-  font-family: 'Roboto Slab', Georgia, serif;
+  font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   font-size: 16px;
   font-weight: 400;
   line-height: 1.65;
@@ -104,7 +104,7 @@ h4 {
 }
 
 .main-nav a {
-  font-family: 'Roboto Slab', serif;
+  font-family: 'Inter', system-ui, sans-serif;
   font-size: 0.95rem;
   color: var(--green-dark);
   padding: 0.25rem 0;
@@ -136,7 +136,7 @@ h4 {
   align-items: center;
   gap: 0.5rem;
   padding: 0.85rem 1.75rem;
-  font-family: 'Roboto Slab', serif;
+  font-family: 'Inter', system-ui, sans-serif;
   font-size: 0.95rem;
   border: 1px solid var(--green-dark);
   background: transparent;
@@ -461,6 +461,23 @@ textarea { min-height: 120px; resize: vertical; }
   overflow: hidden;
   border-radius: 4px;
   margin-bottom: 0.75rem;
+  position: relative;
+}
+
+.sector-tile-image::after,
+.service-featured-media::after,
+.content-block-media::after,
+.case-card-media::after,
+.article-hero-image::after,
+.insight-card-thumb::after,
+.insight-featured-media::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--green-deep);
+  opacity: 0.08;
+  pointer-events: none;
+  mix-blend-mode: multiply;
 }
 
 .sector-tile-image img {
@@ -1758,6 +1775,7 @@ textarea { min-height: 120px; resize: vertical; }
   display: block;
   overflow: hidden;
   border-radius: 6px;
+  position: relative;
 }
 
 .insight-featured-media img {
@@ -1789,6 +1807,7 @@ textarea { min-height: 120px; resize: vertical; }
   overflow: hidden;
   border-radius: 4px 4px 0 0;
   margin: -1.75rem -1.5rem 1rem;
+  position: relative;
 }
 
 .insight-card-thumb img {
@@ -1893,6 +1912,7 @@ textarea { min-height: 120px; resize: vertical; }
   margin: 0 0 1.5rem;
   border-radius: 6px;
   overflow: hidden;
+  position: relative;
 }
 
 .article-hero-image img {
@@ -3180,4 +3200,36 @@ body.lightbox-open {
   .check-pills li {
     border-radius: 8px;
   }
+}
+
+.cta-micro {
+  font-size: 0.85rem;
+  color: var(--green-muted);
+  margin-top: 0.75rem;
+  font-weight: 500;
+  opacity: 0.9;
+}
+
+.content-block-media,
+.service-featured-media,
+.case-card-media {
+  position: relative;
+  overflow: hidden;
+  border-radius: 6px;
+}
+
+.sector-tile-image::after,
+.service-featured-media::after,
+.content-block-media::after,
+.case-card-media::after,
+.article-hero-image::after,
+.insight-card-thumb::after,
+.insight-featured-media::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--green-deep);
+  opacity: 0.08;
+  pointer-events: none;
+  mix-blend-mode: multiply;
 }

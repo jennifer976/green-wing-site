@@ -33,7 +33,10 @@ layout: layouts/base.njk
       </div>
       <p class="article-share-status" aria-live="polite"></p>
     </aside>
-    <p><a href="{{ root }}contact.html" class="btn btn-solid btn-arrow">Arrange an Energy Review</a></p>
+    <p>
+      <a href="{{ root }}contact.html" class="btn btn-solid btn-arrow">Arrange an Energy Review</a>
+      <span class="cta-micro" style="display:block; margin-top:0.5rem;">Start with a free 15-minute discovery call.</span>
+    </p>
     {% set related = collections.insightsSorted | relatedInsights(page.url) %}
     {% if related.length %}
     <aside class="related-posts">
