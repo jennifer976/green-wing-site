@@ -6,7 +6,7 @@ image: /assets/images/chatgpt-image-jun-16-2026-04_45_43-pm.png
 imageAlt: enPact refrigeration and cooling energy saving device
 imageFit: contain
 imagePosition: center center
-imageZoom: 1.35
+imageZoom: 1.05
 ---
 
 Reduces compressor and cooling energy on suitable commercial refrigeration and HVAC systems through operational tuning and targeted interventions.
