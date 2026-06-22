@@ -5,13 +5,13 @@ description: With the proposed MEES 2027 EPC C deadline approaching, commercial
   landlords face increasing pressure to improve building performance and reduce
   compliance risk. Learn why delaying action could prove costly, how rising
   energy charges are affecting property portfolios, and how a Discovery
-  Assessment and strategic Roadmap can help prioritise energy efficiency
+  Assessment Report and Roadmap can help prioritise energy efficiency
   improvements, protect asset value, and prepare for future regulations.
 excerpt: The proposed MEES 2027 deadline is rapidly approaching, and commercial
   landlords who delay risk higher costs, reduced asset attractiveness, and
   potential compliance challenges. This article explores why a proactive
   approach to energy efficiency matters, the impact of rising energy charges,
-  and how Discovery Assessments and tailored Roadmaps can help landlords
+  and how Discovery Assessment Reports and Roadmaps can help landlords
   identify opportunities, prioritise investments, and improve portfolio
   performance ahead of future EPC requirements.
 image: /assets/images/1780314210052.png
@@ -62,7 +62,7 @@ Too many landlords settle for a standard "audit" that tells them what is wrong w
 
 An audit is a history lesson; a Discovery Assessment is a tactical plan. And because the 2026 rush is already underway, landlords who move late risk rushing into whatever solution is available, rather than the one that offers the best ROI.
 
-### The Report and Roadmap: Your Digital Path to Compliance
+### The Discovery Assessment Report and Roadmap: Your Digital Path to Compliance
 
 Compliance shouldn't be a guessing game. Our approach at Green Wing is designed to take the friction out of the process.
 
@@ -70,7 +70,7 @@ It starts with our **Discovery Assessment**. This is a 2–4 hour on-site visit 
 
 Within 24 hours of that visit, you receive the **Discovery Assessment Report and Roadmap**.
 
-The report and roadmap is a branded, professional document that gives you:
+The Discovery Assessment Report and Roadmap is a branded, professional document that gives you:
 
 
 

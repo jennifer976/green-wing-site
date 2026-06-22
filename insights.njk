@@ -26,7 +26,7 @@ eleventyExcludeFromCollections: true
         <time datetime="{{ hubFeatured.date | isoDate }}">{{ hubFeatured.date | readableDate }}</time>
         <h2>{{ hubFeatured.data.title }}</h2>
         <p>{{ hubFeatured.data.excerpt }}</p>
-        <span class="link-arrow">Read article →</span>
+        <span class="link-arrow">Read article</span>
       </div>
       <span class="insight-featured-media">
         <img src="{{ hubFeatured.data.image | assetPath(root) }}" alt="{{ hubFeatured.data.imageAlt or hubFeatured.data.title }}" loading="lazy">
@@ -58,7 +58,7 @@ eleventyExcludeFromCollections: true
       <span class="tag">Operations</span>
       <span class="tag">Measurement</span>
       <span class="tag">Sustainability</span>
-      <span class="tag">Roadmaps</span>
+      <span class="tag">Discovery Assessment Reports and Roadmaps</span>
       <span class="tag">Refrigeration</span>
       <span class="tag">Multi-site estates</span>
     </div>

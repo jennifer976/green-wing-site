@@ -118,7 +118,7 @@
           </a>
           <nav class="footer-links-inline" aria-label="Footer">
             <a href="${pageHref('onsite-discovery-assessment.html')}">Discovery</a>
-            <a href="${pageHref('discovery-roadmap.html')}">Roadmap</a>
+            <a href="${pageHref('discovery-roadmap.html')}">Discovery Assessment Report and Roadmap</a>
             <a href="${pageHref('eoaas.html')}">EOaaS</a>
             <span class="footer-sep" aria-hidden="true">·</span>
             <a href="${pageHref('about.html')}">About</a>
@@ -381,7 +381,7 @@
 
   const FORM_SUBJECTS = {
     contact: 'Contact enquiry — Green Wing website',
-    'sample-roadmap': 'Sample roadmap request — Green Wing website',
+    'sample-roadmap': 'Sample Discovery Assessment Report and Roadmap request — Green Wing website',
     newsletter: 'Newsletter signup — Green Wing website',
   };
 

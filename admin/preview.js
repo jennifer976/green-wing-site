@@ -73,7 +73,7 @@
             })
           ),
           h('nav', { className: 'footer-links-inline', 'aria-label': 'Footer preview' },
-            ['Discovery', 'Roadmap', 'EOaaS', 'About', 'Results', 'Insights', 'Contact'].map(function (label) {
+            ['Discovery', 'Discovery Assessment Report and Roadmap', 'EOaaS', 'About', 'Results', 'Insights', 'Contact'].map(function (label) {
               return h('a', {}, label);
             })
           )
@@ -128,7 +128,7 @@
             h('div', { className: 'cms-home-image-grid' },
               HomepageImageCard('Problem section', data.problem),
               HomepageImageCard('Discovery service card', data.discovery),
-              HomepageImageCard('Report and roadmap preview', data.roadmap),
+              HomepageImageCard('Discovery Assessment Report and Roadmap preview', data.roadmap),
               HomepageImageCard('Hotels sector tile', sectors.hotels, true),
               HomepageImageCard('Pubs and restaurants tile', sectors.restaurants, true),
               HomepageImageCard('Commercial property tile', sectors.commercial, true),
@@ -161,7 +161,7 @@
           h('div', { className: 'container' },
             h('div', { className: 'cms-home-image-grid' },
               HomepageImageCard('Services: Discovery', services.discovery),
-              HomepageImageCard('Services: Report and roadmap', services.roadmap),
+              HomepageImageCard('Services: Discovery Assessment Report and Roadmap', services.roadmap),
               HomepageImageCard('Services: EOaaS', services.eoaas),
               HomepageImageCard('Services: Groundwork logo', services.groundwork),
               HomepageImageCard('About: Intro', about.intro),
@@ -176,7 +176,7 @@
               HomepageImageCard('About: Groundwork logo', about.groundwork),
               HomepageImageCard('About: Auditor logo', about.auditor),
               HomepageImageCard('EOaaS page', servicePages.eoaas),
-              HomepageImageCard('Report and roadmap page', servicePages.roadmap),
+              HomepageImageCard('Discovery Assessment Report and Roadmap page', servicePages.roadmap),
               HomepageImageCard('Onsite page', servicePages.onsite),
               HomepageImageCard('Terms: Colets', policy.colets),
               HomepageImageCard('Terms: Cote', policy.cote),

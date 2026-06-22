@@ -53,6 +53,19 @@ eleventyExcludeFromCollections: true
   </div>
 </section>
 
+<section class="section-light page-section ymca-highlight">
+  <div class="container ymca-highlight-panel">
+    <p class="content-label">{{ caseStudiesPage.ymcaSupport.eyebrow }}</p>
+    <h2>{{ caseStudiesPage.ymcaSupport.title }}</h2>
+    <p>{{ caseStudiesPage.ymcaSupport.body }}</p>
+    <ul class="check-pills">
+      {% for item in caseStudiesPage.ymcaSupport.items %}
+      <li>{{ item }}</li>
+      {% endfor %}
+    </ul>
+  </div>
+</section>
+
 <section class="page-section">
   <div class="container">
     <div class="grid-2 case-grid">

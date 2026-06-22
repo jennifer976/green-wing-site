@@ -5,7 +5,7 @@ stat: Up to 15%
 statLabel: Gas energy cost saving
 challenge: Rising gas costs across a mixed estate of wet-led and food-led sites.
 whatWeDid: Heating circuit review, EndoTherm suitability testing, operational
-  quick wins prioritised in roadmap.
+  quick wins prioritised in the Discovery Assessment Report and Roadmap.
 result: Up to 15% gas energy cost saving on closed-circuit heating where
   conditions suited — verified via degree-day normalised consumption.
 image: /assets/images/267dbdff-5ea5-4ce4-8556-0cd066eac6a6.png

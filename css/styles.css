@@ -322,6 +322,14 @@ section { padding: 4.5rem 0; position: relative; z-index: 2; }
   opacity: 1;
 }
 
+.logo-marquee-set .logo-marquee-img--wide {
+  max-width: 240px;
+}
+
+.logo-marquee-set .logo-marquee-img--extra-wide {
+  max-width: 280px;
+}
+
 .logo-marquee-set img[src$=".jpg"] {
   mix-blend-mode: normal;
 }
@@ -1248,6 +1256,37 @@ textarea { min-height: 120px; resize: vertical; }
   top: 0;
   color: var(--green-accent);
   font-weight: 600;
+}
+
+.ymca-highlight {
+  padding-block: 3.5rem;
+}
+
+.ymca-highlight-panel {
+  max-width: 920px;
+  padding: 2.5rem;
+  border: 1px solid rgba(31, 51, 23, 0.12);
+  border-left: 4px solid var(--green-accent);
+  border-radius: 10px;
+  background:
+    linear-gradient(135deg, rgba(153, 204, 51, 0.12), transparent 42%),
+    #fff;
+  box-shadow: 0 10px 28px rgba(31, 51, 23, 0.05);
+}
+
+.ymca-highlight-panel h2 {
+  max-width: 18ch;
+  color: var(--green-deep);
+  font-weight: 500;
+}
+
+.ymca-highlight-panel > p:not(.content-label) {
+  max-width: 68ch;
+  color: var(--green-muted);
+}
+
+.ymca-highlight-panel .check-pills {
+  margin-top: 1.5rem;
 }
 
 .reviews-section-header {

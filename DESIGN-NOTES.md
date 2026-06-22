@@ -84,7 +84,7 @@ Confirm before publishing:
 2. **25+ technologies** — used in stats bar  
 3. **Client logo display rights** — logos included from existing site assets
 4. **Groundwork accreditation** — still active; block included on Services
-5. **Address** — footer uses Bournemouth (Patch at Bobby's); old Poole address removed from primary contact
+5. **Address** — contact details and footer use the registered office at 149 Capstone Road, Bournemouth
 6. **Independence claim** — copy reflects assess-first approach; confirm given supplier relationships
 7. **Case study names** — currently anonymised until client permission obtained
 8. **Social URLs** — placeholders in `site-config.js`; update with real profiles

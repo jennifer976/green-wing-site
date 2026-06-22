@@ -5,11 +5,22 @@
   "partnerTrust": {
     "eyebrow": "Trusted delivery network",
     "title": "Vetted partners and qualified contractors",
-    "body": "Where a project needs specialist installation or product support, we work with partners and contractors who have been checked for suitability, insurance, relevant certifications and the qualifications required for the work. We do not publish a full supplier list because the right team depends on the site, technology and scope, but every recommendation is made with competence, compliance and measured outcomes in mind.",
+    "body": "Where a project needs specialist installation, product support or compliance review, we work with partners, qualified contractors and ESOS assessors who have been checked for suitability, insurance, relevant certifications and the qualifications required for the work. We do not publish a full supplier list because the right team depends on the site, technology and scope, but every recommendation is made with competence, compliance and measured outcomes in mind.",
     "items": [
       "Relevant trade qualifications, accreditations and product training checked before recommendation.",
       "Insurance, health and safety expectations and site-readiness considered before work begins.",
-      "Green Wing keeps the focus on suitability, measurement and verified savings rather than supplier preference."
+      "Green Wing keeps the focus on suitability, measurement and verified savings rather than supplier preference.",
+      "ESOS compliance evidence can be reviewed by a qualified ESOS assessor where a client's reporting duties require it."
+    ]
+  },
+  "ymcaSupport": {
+    "eyebrow": "Multi-site community estates",
+    "title": "Helping YMCA sites across the South reduce energy waste",
+    "body": "Green Wing is supporting multiple YMCA locations in the South with practical energy assessments designed to find avoidable waste, prioritise the fixes and help protect more budget for frontline community work.",
+    "items": [
+      "Assessments look at real site behaviour: plant, controls, settings, routines and operating hours.",
+      "Findings are written so similar opportunities can be repeated across comparable buildings.",
+      "Where compliance evidence is needed, reports can be reviewed by a qualified ESOS assessor."
     ]
   },
   "reviews": [

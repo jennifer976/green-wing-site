@@ -8,4 +8,4 @@ imageAlt: Fuel conditioning technology
 
 Improves combustion efficiency on gas, LPG and oil heating systems where site conditions and equipment age suit the intervention.
 
-We assess boiler condition and fuel type before inclusion in your report and roadmap.
+We assess boiler condition and fuel type before inclusion in your Discovery Assessment Report and Roadmap.

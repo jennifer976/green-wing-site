@@ -6,14 +6,14 @@ description: Discover seven practical energy efficiency solutions restaurants
   can implement without closing their doors. From real-time energy monitoring
   and LED lighting to HVAC optimisation and refrigeration maintenance, learn how
   hospitality businesses can reduce energy costs, improve operational
-  efficiency, and build a clear roadmap to lower consumption and stronger
+  efficiency, and build a clear Discovery Assessment Report and Roadmap to lower consumption and stronger
   margins.
 excerpt: Energy efficiency doesn't have to mean disruption. This guide explores
   seven proven ways restaurants can reduce energy consumption while maintaining
   service, including real-time monitoring, smart HVAC controls, LED lighting
   upgrades, refrigeration optimisation, and phased equipment improvements. Learn
   how a Discovery Assessment can identify opportunities and create a practical
-  roadmap for long-term savings.
+  Discovery Assessment Report and Roadmap for long-term savings.
 image: /assets/images/1777981122248.png
 featured: false
 showScopeInfographic: false
@@ -22,7 +22,7 @@ Running a restaurant in 2026 is a balancing act of rising costs, razor-thin marg
 
 At Green Wing Energy Solutions, we often hear the same concern from restaurateurs: "I want to be more efficient, but I can’t afford to shut my doors to make it happen."
 
-The good news is that you don't have to. Real energy efficiency doesn't always require a major construction project or a two-week closure. It starts with data, moves through smart management, and ends with a sustainable bottom line. We approach this through what we call a Discovery Assessment: a non-invasive look at how your building breathes and consumes: which allows us to build a tailored Roadmap for your business.
+The good news is that you don't have to. Real energy efficiency doesn't always require a major construction project or a two-week closure. It starts with data, moves through smart management, and ends with a sustainable bottom line. We approach this through what we call a Discovery Assessment: a non-invasive look at how your building breathes and consumes, which allows us to build a tailored Discovery Assessment Report and Roadmap for your business.
 
 Here are seven energy efficiency solutions you can implement today without missing a single service.
 
@@ -36,7 +36,7 @@ This is the foundation of our Discovery Assessment. By seeing the peaks and trou
 
 **2. Transition to High-Output LED Lighting**
 
-Lighting might only account for 10-15% of your total energy spend, but it is one of the easiest "quick wins" in any Roadmap. Traditional halogen or incandescent bulbs generate a significant amount of heat, which in turn makes your air conditioning work harder.
+Lighting might only account for 10-15% of your total energy spend, but it is one of the easiest "quick wins" in any Discovery Assessment Report and Roadmap. Traditional halogen or incandescent bulbs generate a significant amount of heat, which in turn makes your air conditioning work harder.
 
 Switching to LEDs is a straightforward energy efficiency solution. Modern LED technology offers the same "warmth" and ambiance required for dining rooms while consuming up to 90% less energy. These can be swapped out bulb-by-bulb during daily cleaning or before doors open, ensuring no disruption to your guests.
 
@@ -68,7 +68,7 @@ By calibrating your machines to the optimal 140°F (60°C) and ensuring that sta
 
 **7. The Power of Incremental Equipment Upgrades**
 
-You don't need to replace every stove and fryer at once. The most successful energy Roadmaps involve a "replace-on-failure" or a phased upgrade plan. 
+You don't need to replace every stove and fryer at once. The most successful Discovery Assessment Reports and Roadmaps involve a "replace-on-failure" or a phased upgrade plan. 
 
 When a piece of kit reaches the end of its life, replacing it with an Energy Star-certified or high-efficiency induction alternative makes a massive difference. Induction hobs, for example, are roughly 90% efficient compared to the 40-55% efficiency of gas. They also keep the kitchen cooler, reducing the load on your extraction and cooling systems.
 
