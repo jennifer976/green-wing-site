@@ -323,11 +323,13 @@ section { padding: 4.5rem 0; position: relative; z-index: 2; }
 }
 
 .logo-marquee-set .logo-marquee-img--wide {
-  max-width: 240px;
+  max-height: 56px;
+  max-width: 185px;
 }
 
 .logo-marquee-set .logo-marquee-img--extra-wide {
-  max-width: 280px;
+  max-height: 60px;
+  max-width: 220px;
 }
 
 .logo-marquee-set img[src$=".jpg"] {
