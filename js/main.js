@@ -510,7 +510,23 @@
         const result = await response.json().catch(() => ({}));
         if (!response.ok) throw new Error(result.message || 'Submit failed');
 
-        status.textContent = result.message || 'Thank you. We will be in touch shortly.';
+        const links = result.sampleLinks;
+        if (links && (links.assessment || links.roadmap)) {
+          const parts = [
+            result.message || 'Thank you. Your sample documents are ready.',
+            '<span class="contact-modal-sample-links">',
+            links.assessment
+              ? `<a href="${links.assessment}" target="_blank" rel="noopener noreferrer">Download Assessment Report (PDF)</a>`
+              : '',
+            links.roadmap
+              ? `<a href="${links.roadmap}" target="_blank" rel="noopener noreferrer">Download Roadmap (PDF)</a>`
+              : '',
+            '</span>',
+          ].filter(Boolean);
+          status.innerHTML = parts.join(' ');
+        } else {
+          status.textContent = result.message || 'Thank you. We will be in touch shortly.';
+        }
         status.className = 'contact-modal-status is-success';
         form.reset();
       } catch (error) {

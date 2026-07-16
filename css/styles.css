@@ -542,6 +542,19 @@ section { padding: 4.5rem 0; position: relative; z-index: 2; }
   color: var(--green-deep);
 }
 
+.contact-modal-sample-links {
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+  margin-top: 0.75rem;
+}
+
+.contact-modal-sample-links a {
+  color: var(--green-deep);
+  font-weight: 600;
+  text-decoration: underline;
+}
+
 .contact-modal-status.is-error {
   background: #fde8e8;
   color: #8b0000;

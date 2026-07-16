@@ -68,7 +68,12 @@ exports.handler = async function handler(event) {
   const apiKey = process.env.RESEND_API_KEY;
   const toEmail = process.env.CONTACT_TO_EMAIL || 'joncullum@greenwinguk.com';
   const fromEmail = process.env.CONTACT_FROM_EMAIL || 'Green Wing Website <onboarding@resend.dev>';
-  const siteUrl = (process.env.SITE_URL || 'https://greenwingenergysolutions.com').replace(/\/$/, '');
+  const requestHost = clean(event.headers['x-forwarded-host'] || event.headers.host, 200);
+  const requestProto = clean(event.headers['x-forwarded-proto'] || 'https', 10) || 'https';
+  const siteUrl = (
+    process.env.SITE_URL ||
+    (requestHost ? `${requestProto}://${requestHost}` : 'https://greenwingenergysolutions.com')
+  ).replace(/\/$/, '');
   const sampleAssessmentUrl =
     process.env.SAMPLE_ASSESSMENT_REPORT_URL ||
     process.env.SAMPLE_REPORT_URL ||
@@ -175,11 +180,15 @@ exports.handler = async function handler(event) {
     console.error('Resend internal enquiry send failed', {
       status: response.status,
       body: await response.text(),
+      to: toEmail,
+      from: fromEmail,
     });
     return json(502, {
       message: 'There was a problem sending the enquiry. Please email joncullum@greenwinguk.com directly.',
     });
   }
+
+  console.log('Internal enquiry email sent', { to: toEmail, enquiryType, sampleRequested });
 
   if (sampleRequested) {
     const sampleText = [
@@ -231,16 +240,33 @@ exports.handler = async function handler(event) {
     });
 
     if (!sampleResponse.ok) {
+      const sampleErrorBody = await sampleResponse.text();
       console.error('Resend sample report auto-reply failed', {
         status: sampleResponse.status,
-        body: await sampleResponse.text(),
+        body: sampleErrorBody,
+        to: email,
+        from: fromEmail,
       });
-      return json(502, {
-        message: 'We received your enquiry, but there was a problem sending the example report. Please email joncullum@greenwinguk.com directly.',
+      // Still give the visitor the documents on-screen if email delivery failed
+      return json(200, {
+        message: 'We received your enquiry. The automatic email could not be sent, so please download the examples below. Check spam if an email arrives later.',
+        sampleLinks: {
+          assessment: sampleAssessmentUrl,
+          roadmap: sampleRoadmapUrl,
+        },
+        emailDelivered: false,
       });
     }
 
-    return json(200, { message: 'Thank you. The example report has been emailed to you.' });
+    console.log('Sample report auto-reply sent', { to: email, from: fromEmail });
+    return json(200, {
+      message: 'Thank you. The example report has been emailed to you — please also check your spam/junk folder. You can download the files below now.',
+      sampleLinks: {
+        assessment: sampleAssessmentUrl,
+        roadmap: sampleRoadmapUrl,
+      },
+      emailDelivered: true,
+    });
   }
 
   const auditText = [
