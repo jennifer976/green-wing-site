@@ -57,7 +57,8 @@ These are MIT-licensed or similar — use individual components, not full themes
 
 **Before launch:**
 - [ ] Add `RESEND_API_KEY`, `CONTACT_TO_EMAIL`, and `CONTACT_FROM_EMAIL` in Netlify for the lightweight enquiry form
-- [ ] Optional: add `SAMPLE_REPORT_URL` in Netlify when the final example report PDF/link is ready
+- [x] Add example report PDFs under `assets/docs/`
+- [ ] Optional: add `SAMPLE_ASSESSMENT_REPORT_URL` and `SAMPLE_ROADMAP_URL` in Netlify if the hosted report links change later
 - [ ] Submit sitemap to Google Search Console
 - [ ] Confirm `[CHECK]` items in content spec (founding year, logo permissions, Groundwork accreditation)
 - [ ] Add GA4 or privacy-friendly analytics if needed
