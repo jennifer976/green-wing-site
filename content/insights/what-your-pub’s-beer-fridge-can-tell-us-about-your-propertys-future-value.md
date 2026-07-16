@@ -11,7 +11,7 @@ excerpt: Your beer fridge could be costing far more than higher electricity
   protecting asset value, reducing operating costs, and preparing for future EPC
   requirements.
 image: /assets/images/1782899483472.png
-featured: false
+featured: true
 showScopeInfographic: false
 ---
 Walk into any pub in the UK, and you’ll hear it. That low-frequency hum, often coming from a fridge that’s seen more World Cups than your average regular. It’s a sound we associate with a cold pint, but in 2026, that hum is sounding more like a warning siren for property owners.
