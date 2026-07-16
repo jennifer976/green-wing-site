@@ -181,12 +181,12 @@ exports.handler = async function handler(event) {
     const sampleText = [
       `Hi ${name},`,
       '',
-      'Thanks for requesting the Green Wing example Discovery Assessment Report and Roadmap.',
+      'Thank you for requesting the Green Wing example Discovery Assessment Report and Roadmap.',
       '',
       `Discovery Assessment Report: ${sampleAssessmentUrl}`,
       `Discovery Roadmap: ${sampleRoadmapUrl}`,
       '',
-      'Jon has also received your enquiry and will come back to you if there is anything useful to talk through.',
+      'If you would like to discuss the documents, talk through your site, or book an energy audit, please reply to this email and we will get back to you within two working days.',
       '',
       'Green Wing Energy Solutions',
       'Energy saving solutions that do not cost the Earth.',
@@ -195,7 +195,7 @@ exports.handler = async function handler(event) {
     const sampleHtml = greenWingEmail({
       eyebrow: 'Green Wing Energy Solutions',
       title: 'Your example report',
-      intro: `Hi ${name}, thanks for requesting the Green Wing example Discovery Assessment Report and Roadmap.`,
+      intro: `Hi ${name}, thank you for requesting the Green Wing example Discovery Assessment Report and Roadmap.`,
       body: `
         <p style="margin:0;color:#1f3317;font-size:16px;line-height:1.6;">You can open the example documents using the links below. They show the kind of practical, ranked output we use to move from site discovery to clear next steps.</p>
         <p style="margin:22px 0 0;">
@@ -205,7 +205,7 @@ exports.handler = async function handler(event) {
           <a href="${escapeHtml(sampleRoadmapUrl)}" style="display:inline-block;background:#1f3317;color:#ffffff;text-decoration:none;font-weight:700;padding:13px 18px;border-radius:999px;">Open the Roadmap</a>
         </p>
         <div style="margin-top:18px;padding:18px;border-left:4px solid #99cc33;background:#f6f8f2;">
-          <p style="margin:0;color:#5c684f;font-size:14px;line-height:1.6;">Jon has also received your enquiry and will come back to you if there is anything useful to talk through.</p>
+          <p style="margin:0;color:#5c684f;font-size:14px;line-height:1.6;">If you would like to discuss the documents, talk through your site, or book an energy audit, please reply to this email and we will get back to you within two working days.</p>
         </div>`,
       footer: `Green Wing Energy Solutions<br>Energy saving solutions that do not cost the Earth.`,
     });
