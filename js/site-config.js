@@ -19,6 +19,7 @@ window.GW_SITE = {
   foundingDate: '2009',
   responseTime: 'We aim to reply within one working day.',
   contactEndpoint: '/.netlify/functions/contact',
+  gaMeasurementId: 'G-RGKJRGPLZZ',
   defaultOgImage: '/assets/images/hm-pg-bkgrd-img.jpg',
   social: {
     facebook: 'https://www.facebook.com/greenwingenergysolutions',

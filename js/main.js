@@ -3,6 +3,23 @@
 
   const S = () => window.GW_SITE || {};
 
+  function initAnalytics() {
+    const id = S().gaMeasurementId;
+    if (!id || window.gtag) return;
+
+    window.dataLayer = window.dataLayer || [];
+    window.gtag = function gtag() {
+      window.dataLayer.push(arguments);
+    };
+    window.gtag('js', new Date());
+    window.gtag('config', id);
+
+    const script = document.createElement('script');
+    script.async = true;
+    script.src = `https://www.googletagmanager.com/gtag/js?id=${encodeURIComponent(id)}`;
+    document.head.appendChild(script);
+  }
+
   const NAV_ITEMS = [
     { href: 'index.html', label: 'Home' },
     { href: 'services.html', label: 'Services' },
@@ -631,6 +648,8 @@
       dividersSinceLast = 0;
     }
   }
+
+  initAnalytics();
 
   document.addEventListener('DOMContentLoaded', () => {
     injectSeoMeta();
