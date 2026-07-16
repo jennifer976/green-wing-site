@@ -1443,8 +1443,8 @@ textarea { min-height: 120px; resize: vertical; }
 
 .ymca-highlight-panel {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) auto;
-  gap: clamp(1.5rem, 4vw, 3rem);
+  grid-template-columns: minmax(0, 1fr) minmax(150px, 220px);
+  gap: clamp(1.25rem, 3vw, 2rem);
   align-items: center;
   max-width: 920px;
   padding: 2.5rem;
@@ -1458,12 +1458,12 @@ textarea { min-height: 120px; resize: vertical; }
 }
 
 .ymca-highlight-panel h2 {
-  max-width: 18ch;
+  max-width: 34ch;
   color: var(--green-deep);
   font-weight: 500;
 }
 
-.ymca-highlight-panel > p:not(.content-label) {
+.ymca-highlight-copy > p:not(.content-label) {
   max-width: 68ch;
   color: var(--green-muted);
 }
@@ -1475,8 +1475,9 @@ textarea { min-height: 120px; resize: vertical; }
 .ymca-highlight-logo {
   display: grid;
   place-items: center;
-  min-width: 190px;
-  padding: 1.25rem;
+  justify-self: end;
+  width: 100%;
+  padding: 1rem;
   border: 1px solid rgba(31, 51, 23, 0.08);
   border-radius: 12px;
   background: rgba(255, 255, 255, 0.78);
@@ -1484,7 +1485,7 @@ textarea { min-height: 120px; resize: vertical; }
 
 .ymca-highlight-logo img {
   display: block;
-  width: min(220px, 100%);
+  width: min(170px, 100%);
   height: auto;
   object-fit: contain;
 }
@@ -3408,6 +3409,17 @@ body.lightbox-open {
   clip: rect(0, 0, 0, 0);
   white-space: nowrap;
   border: 0;
+}
+
+@media (max-width: 1080px) {
+  .ymca-highlight-panel {
+    grid-template-columns: 1fr;
+  }
+
+  .ymca-highlight-logo {
+    justify-self: start;
+    max-width: 240px;
+  }
 }
 
 @media (max-width: 900px) {
