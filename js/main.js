@@ -380,6 +380,7 @@
     if (document.getElementById('gw-contact-modal')) return;
 
     const site = S();
+    const base = assetBase();
     const modal = document.createElement('div');
     modal.className = 'contact-modal';
     modal.id = 'gw-contact-modal';
@@ -388,9 +389,17 @@
       <div class="contact-modal-backdrop" data-contact-close></div>
       <div class="contact-modal-dialog" role="dialog" aria-modal="true" aria-labelledby="contact-modal-title">
         <button class="contact-modal-close" type="button" aria-label="Close enquiry form" data-contact-close>&times;</button>
-        <p class="content-label">Contact us today</p>
-        <h2 id="contact-modal-title">Tell us what you want to understand.</h2>
-        <p class="contact-modal-intro">Share a few details and Green Wing will come back to arrange the right next step. You can also email <a href="mailto:${site.email}">${site.email}</a>.</p>
+        <div class="contact-modal-brand">
+          <span class="contact-modal-logo-wrap">
+            <img src="${base}assets/images/green-wing-logo-full-colour.svg" alt="${site.name}" width="154" height="51">
+          </span>
+          <span class="contact-modal-brand-copy">${site.tagline || 'Energy saving solutions that do not cost the Earth.'}</span>
+        </div>
+        <div class="contact-modal-heading">
+          <p class="content-label">Contact us today</p>
+          <h2 id="contact-modal-title">Tell us what you want to understand.</h2>
+          <p class="contact-modal-intro">Share a few details and Green Wing will come back to arrange the right next step. You can also email <a href="mailto:${site.email}">${site.email}</a>.</p>
+        </div>
         <form class="contact-modal-form" id="gw-contact-form">
           <input type="text" name="companyWebsite" tabindex="-1" autocomplete="off" class="contact-modal-honeypot" aria-hidden="true">
           <input type="hidden" name="submittedAt" value="">

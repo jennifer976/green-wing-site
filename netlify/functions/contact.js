@@ -18,6 +18,24 @@ function isEmail(value) {
   return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
 }
 
+function escapeHtml(value) {
+  return String(value || '')
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#39;');
+}
+
+function fieldRow(label, value) {
+  if (!value) return '';
+  return `
+    <tr>
+      <td style="padding:10px 0;color:#5c684f;font-size:13px;width:140px;">${escapeHtml(label)}</td>
+      <td style="padding:10px 0;color:#1f3317;font-size:15px;font-weight:600;">${escapeHtml(value)}</td>
+    </tr>`;
+}
+
 exports.handler = async function handler(event) {
   if (event.httpMethod !== 'POST') {
     return json(405, { message: 'Method not allowed' });
@@ -67,6 +85,9 @@ exports.handler = async function handler(event) {
   }
 
   const lines = [
+    'Green Wing Energy Solutions',
+    'New website enquiry',
+    '',
     `Name: ${name}`,
     `Email: ${email}`,
     phone ? `Phone: ${phone}` : null,
@@ -77,7 +98,38 @@ exports.handler = async function handler(event) {
     '',
     'Message:',
     message,
+    '',
+    'Reply directly to this email to respond to the enquirer.',
   ].filter((line) => line !== null);
+
+  const html = `
+    <div style="margin:0;padding:0;background:#f6f8f2;font-family:Arial,sans-serif;color:#1f3317;">
+      <div style="max-width:680px;margin:0 auto;padding:28px 18px;">
+        <div style="background:#1f3317;border-radius:16px 16px 0 0;padding:24px 28px;color:#ffffff;">
+          <p style="margin:0 0 6px;color:#99cc33;font-size:12px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;">Green Wing Energy Solutions</p>
+          <h1 style="margin:0;font-size:26px;line-height:1.2;">New website enquiry</h1>
+          <p style="margin:10px 0 0;color:#dfe9d7;font-size:14px;">Energy saving solutions that do not cost the Earth.</p>
+        </div>
+        <div style="background:#ffffff;border:1px solid #e1e8da;border-top:0;padding:24px 28px;">
+          <table style="width:100%;border-collapse:collapse;">
+            ${fieldRow('Name', name)}
+            ${fieldRow('Email', email)}
+            ${fieldRow('Phone', phone)}
+            ${fieldRow('Company', company)}
+            ${fieldRow('Estate size', estateSize)}
+            ${fieldRow('Enquiry type', enquiryType)}
+            ${fieldRow('Page', page)}
+          </table>
+          <div style="margin-top:18px;padding:18px;border-left:4px solid #99cc33;background:#f6f8f2;">
+            <p style="margin:0 0 8px;color:#5c684f;font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;">Message</p>
+            <p style="margin:0;color:#1f3317;font-size:16px;line-height:1.6;white-space:pre-line;">${escapeHtml(message)}</p>
+          </div>
+        </div>
+        <div style="background:#eef4e8;border-radius:0 0 16px 16px;border:1px solid #e1e8da;border-top:0;padding:16px 28px;color:#5c684f;font-size:13px;">
+          Reply directly to this email to respond to ${escapeHtml(name)}.
+        </div>
+      </div>
+    </div>`;
 
   const response = await fetch('https://api.resend.com/emails', {
     method: 'POST',
@@ -89,8 +141,9 @@ exports.handler = async function handler(event) {
       from: fromEmail,
       to: [toEmail],
       reply_to: email,
-      subject: `Website enquiry from ${name}`,
+      subject: `Green Wing website enquiry: ${enquiryType || name}`,
       text: lines.join('\n'),
+      html,
     }),
   });
 

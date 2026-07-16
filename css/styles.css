@@ -420,11 +420,13 @@ section { padding: 4.5rem 0; position: relative; z-index: 2; }
   width: min(100%, 620px);
   max-height: min(90vh, 760px);
   overflow: auto;
-  background: #fff;
+  background:
+    linear-gradient(135deg, rgba(153, 204, 51, 0.1), transparent 38%),
+    #fff;
   border: 1px solid rgba(153, 204, 51, 0.22);
   border-radius: 14px;
   box-shadow: 0 28px 80px rgba(14, 24, 11, 0.28);
-  padding: clamp(1.35rem, 3vw, 2rem);
+  padding: 0;
 }
 
 .contact-modal-close {
@@ -442,6 +444,53 @@ section { padding: 4.5rem 0; position: relative; z-index: 2; }
   line-height: 1;
 }
 
+.contact-modal-brand {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: clamp(1.2rem, 3vw, 1.65rem) clamp(1.35rem, 3vw, 2rem);
+  background: rgba(255, 255, 255, 0.86);
+  border-bottom: 1px solid rgba(31, 51, 23, 0.08);
+}
+
+.contact-modal-logo-wrap {
+  display: inline-flex;
+  align-items: center;
+  max-width: 170px;
+}
+
+.contact-modal-logo-wrap img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.contact-modal-brand-copy {
+  max-width: 210px;
+  color: var(--green-muted);
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.76rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  line-height: 1.35;
+  text-align: right;
+  text-transform: uppercase;
+}
+
+.contact-modal-heading,
+.contact-modal-form {
+  padding-inline: clamp(1.35rem, 3vw, 2rem);
+}
+
+.contact-modal-heading {
+  padding-top: clamp(1.2rem, 3vw, 1.75rem);
+}
+
+.contact-modal-heading h2 {
+  margin-top: 0;
+}
+
 .contact-modal-intro {
   color: var(--green-muted);
   margin-bottom: 1.35rem;
@@ -451,6 +500,7 @@ section { padding: 4.5rem 0; position: relative; z-index: 2; }
 .contact-modal-form {
   display: grid;
   gap: 0.95rem;
+  padding-bottom: clamp(1.35rem, 3vw, 2rem);
 }
 
 .contact-modal-form .form-group {
@@ -495,6 +545,26 @@ section { padding: 4.5rem 0; position: relative; z-index: 2; }
 .contact-modal button[disabled] {
   cursor: progress;
   opacity: 0.72;
+}
+
+@media (max-width: 560px) {
+  .contact-modal {
+    padding: 0.75rem;
+  }
+
+  .contact-modal-brand {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .contact-modal-brand-copy {
+    max-width: none;
+    text-align: left;
+  }
+
+  .contact-modal-intro {
+    padding-right: 0;
+  }
 }
 
 .form-group { margin-bottom: 1rem; }
