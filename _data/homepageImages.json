@@ -1,8 +1,8 @@
 {
   "heroPoster": "assets/images/hero-video-v2-poster.jpg",
-  "heroVideo": "assets/images/hero-video-v2.mp4",
+  "heroVideo": "assets/images/hero-video-v2-optimized.mp4",
   "problem": {
-    "image": "/assets/images/1f2cb2aa-b6b2-4523-bdd4-82a5004804e2.png",
+    "image": "assets/images/homepage-problem-optimized.webp",
     "alt": "Energy consultant reviewing plant room equipment with site team"
   },
   "discovery": {
@@ -10,7 +10,7 @@
     "alt": "Energy assessor reviewing site data on a tablet in a plant room"
   },
   "roadmap": {
-    "image": "/assets/images/chatgpt-image-jun-16-2026-02_34_11-pm.png",
+    "image": "assets/images/homepage-roadmap-optimized.webp",
     "alt": "Sample energy opportunity roadmap document"
   },
   "sectors": {

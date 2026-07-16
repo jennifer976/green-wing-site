@@ -1,0 +1,65 @@
+---
+layout: layouts/base.njk
+permalink: referrals.html
+root: ""
+title: Referrals & Endorsements | Green Wing Energy Solutions
+description: Green Wing is a referral-led energy optimisation consultancy. See why clients, partners and site teams recommend our evidence-led approach.
+canonical: https://greenwingenergysolutions.com/referrals
+eleventyExcludeFromCollections: true
+---
+<section class="page-hero referral-hero">
+  <div class="container">
+    <p class="page-eyebrow">{{ referralsPage.heroEyebrow }}</p>
+    <h1>{{ referralsPage.title }}</h1>
+    <p class="lead">{{ referralsPage.lead }}</p>
+  </div>
+</section>
+
+<section class="page-section referral-proof-section">
+  <div class="container referral-proof-grid">
+    <article class="referral-stat-card">
+      <p class="proof-stat">60-70%</p>
+      <p class="proof-label">of work comes from referrals</p>
+      <p>Most new conversations begin because someone has seen how Green Wing works on real sites and recommends the approach.</p>
+    </article>
+    <article class="referral-copy-card">
+      <p class="content-label">{{ referralsPage.intro.eyebrow }}</p>
+      <h2>{{ referralsPage.intro.title }}</h2>
+      <p>{{ referralsPage.intro.body }}</p>
+      <ul class="check-pills">
+        {% for item in referralsPage.intro.items %}
+        <li>{{ item }}</li>
+        {% endfor %}
+      </ul>
+    </article>
+  </div>
+</section>
+
+<section class="section-light page-section endorsements-section">
+  <div class="container">
+    <div class="reviews-section-header">
+      <p class="content-label">What people say</p>
+      <h2>Endorsements and referral comments</h2>
+      <p>Approved comments can be added here as they come in.</p>
+    </div>
+
+    {% if referralsPage.endorsements | length %}
+    <div class="endorsement-grid">
+      {% for endorsement in referralsPage.endorsements %}
+      <article class="review-card endorsement-card">
+        <p>&ldquo;{{ endorsement.quote }}&rdquo;</p>
+        <footer>{{ endorsement.name }}{% if endorsement.context %}, <cite>{{ endorsement.context }}</cite>{% endif %}</footer>
+      </article>
+      {% endfor %}
+    </div>
+    {% else %}
+    <div class="endorsement-empty-state">
+      <h3>{{ referralsPage.placeholderTitle }}</h3>
+      <p>{{ referralsPage.placeholderBody }}</p>
+      <a href="contact.html" class="btn btn-arrow">Speak to Green Wing</a>
+    </div>
+    {% endif %}
+  </div>
+</section>
+
+{% include "partials/cta-band.njk" %}

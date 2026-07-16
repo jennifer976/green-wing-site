@@ -8,6 +8,7 @@
     { href: 'services.html', label: 'Services' },
     { href: 'solutions.html', label: 'Solutions' },
     { href: 'case-studies.html', label: 'Results' },
+    { href: 'referrals.html', label: 'Referrals' },
     { href: 'about.html', label: 'About' },
     { href: 'insights.html', label: 'Insights' },
     { href: 'contact.html', label: 'Contact' },
@@ -122,6 +123,7 @@
             <a href="${pageHref('eoaas.html')}">EOaaS</a>
             <span class="footer-sep" aria-hidden="true">·</span>
             <a href="${pageHref('about.html')}">About</a>
+            <a href="${pageHref('referrals.html')}">Referrals</a>
             <a href="${pageHref('case-studies.html')}">Results</a>
             <a href="${pageHref('insights.html')}">Insights</a>
             <a href="${pageHref('contact.html')}">Contact</a>
@@ -138,12 +140,7 @@
         </div>
         <div class="footer-slim-bottom">
           <p>© ${new Date().getFullYear()} Green Wing Energy Solutions · Co. <a href="${site.companiesHouseUrl || '#'}" target="_blank" rel="noopener noreferrer">${site.companyNumber}</a><br><span class="footer-registered">Registered office: ${site.registeredOffice}</span></p>
-          <form class="footer-newsletter-inline" data-form="newsletter">
-            <label class="visually-hidden" for="newsletter-email">Email for newsletter</label>
-            <input type="email" id="newsletter-email" name="email" required placeholder="Subscribe for insights">
-            <button type="submit" class="btn btn-newsletter">Subscribe</button>
-            <p class="form-message" role="status"></p>
-          </form>
+          <p class="footer-direct-contact"><a href="mailto:${site.email}">Contact us today</a></p>
         </div>
       </div>`;
   }
@@ -379,68 +376,141 @@
     setMeta('name', 'robots', 'index, follow');
   }
 
-  const FORM_SUBJECTS = {
-    contact: 'Contact enquiry — Green Wing website',
-    'sample-roadmap': 'Sample Discovery Assessment Report and Roadmap request — Green Wing website',
-    newsletter: 'Newsletter signup — Green Wing website',
-  };
+  function initContactModal() {
+    if (document.getElementById('gw-contact-modal')) return;
 
-  function initFormEndpoints() {
-    const endpoint = S().formspree;
-    document.querySelectorAll('form[data-form]').forEach((form) => {
-      if (!form.dataset.endpoint || form.dataset.endpoint.includes('YOUR_FORM_ID')) {
-        form.dataset.endpoint = endpoint;
-      }
+    const site = S();
+    const modal = document.createElement('div');
+    modal.className = 'contact-modal';
+    modal.id = 'gw-contact-modal';
+    modal.hidden = true;
+    modal.innerHTML = `
+      <div class="contact-modal-backdrop" data-contact-close></div>
+      <div class="contact-modal-dialog" role="dialog" aria-modal="true" aria-labelledby="contact-modal-title">
+        <button class="contact-modal-close" type="button" aria-label="Close enquiry form" data-contact-close>&times;</button>
+        <p class="content-label">Contact us today</p>
+        <h2 id="contact-modal-title">Tell us what you want to understand.</h2>
+        <p class="contact-modal-intro">Share a few details and Green Wing will come back to arrange the right next step. You can also email <a href="mailto:${site.email}">${site.email}</a>.</p>
+        <form class="contact-modal-form" id="gw-contact-form">
+          <input type="text" name="companyWebsite" tabindex="-1" autocomplete="off" class="contact-modal-honeypot" aria-hidden="true">
+          <input type="hidden" name="submittedAt" value="">
+          <input type="hidden" name="page" value="">
+          <div class="form-group">
+            <label for="contact-modal-name">Name *</label>
+            <input type="text" id="contact-modal-name" name="name" required autocomplete="name">
+          </div>
+          <div class="form-group">
+            <label for="contact-modal-email">Email *</label>
+            <input type="email" id="contact-modal-email" name="email" required autocomplete="email">
+          </div>
+          <div class="form-group">
+            <label for="contact-modal-phone">Phone</label>
+            <input type="tel" id="contact-modal-phone" name="phone" autocomplete="tel">
+          </div>
+          <div class="form-group">
+            <label for="contact-modal-company">Company</label>
+            <input type="text" id="contact-modal-company" name="company" autocomplete="organization">
+          </div>
+          <div class="form-group">
+            <label for="contact-modal-estate">Number of sites / estate size</label>
+            <input type="text" id="contact-modal-estate" name="estateSize" placeholder="e.g. 12 sites across the South West">
+          </div>
+          <div class="form-group">
+            <label for="contact-modal-type">What are you enquiring about?</label>
+            <select id="contact-modal-type" name="enquiryType">
+              <option>Energy review enquiry</option>
+              <option>Sample Discovery Assessment Report and Roadmap request</option>
+              <option>Onsite Discovery Assessment</option>
+              <option>EOaaS</option>
+              <option>General enquiry</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="contact-modal-message">Message *</label>
+            <textarea id="contact-modal-message" name="message" required placeholder="Tell us a little about the site, issue or opportunity."></textarea>
+          </div>
+          <button type="submit" class="btn btn-solid btn-arrow">Send enquiry</button>
+          <p class="contact-modal-status" role="status"></p>
+        </form>
+      </div>`;
 
-      const formType = form.dataset.form;
-      if (formType && !form.querySelector('input[name="_subject"]')) {
-        const subject = document.createElement('input');
-        subject.type = 'hidden';
-        subject.name = '_subject';
-        subject.value = FORM_SUBJECTS[formType] || 'Website enquiry — Green Wing';
-        form.appendChild(subject);
-      }
+    document.body.appendChild(modal);
+
+    const form = modal.querySelector('#gw-contact-form');
+    const status = modal.querySelector('.contact-modal-status');
+    const firstField = modal.querySelector('#contact-modal-name');
+    let previousFocus = null;
+
+    const normaliseEnquiryType = (value) => {
+      const label = String(value || '').toLowerCase();
+      if (label.includes('sample')) return 'Sample Discovery Assessment Report and Roadmap request';
+      if (label.includes('energy review') || label.includes('arrange')) return 'Energy review enquiry';
+      if (label.includes('onsite')) return 'Onsite Discovery Assessment';
+      if (label.includes('eoaas')) return 'EOaaS';
+      return 'General enquiry';
+    };
+
+    const openModal = (enquiryType) => {
+      previousFocus = document.activeElement;
+      form.reset();
+      status.textContent = '';
+      status.className = 'contact-modal-status';
+      form.elements.submittedAt.value = String(Date.now());
+      form.elements.page.value = window.location.href;
+      form.elements.enquiryType.value = normaliseEnquiryType(enquiryType);
+      modal.hidden = false;
+      document.documentElement.classList.add('modal-open');
+      setTimeout(() => firstField.focus(), 0);
+    };
+
+    const closeModal = () => {
+      modal.hidden = true;
+      document.documentElement.classList.remove('modal-open');
+      if (previousFocus && typeof previousFocus.focus === 'function') previousFocus.focus();
+    };
+
+    document.addEventListener('click', (event) => {
+      const trigger = event.target.closest('[data-contact-modal], a.header-cta[href*="contact"], a.btn[href$="contact.html"], .footer-direct-contact a');
+      if (!trigger) return;
+      event.preventDefault();
+      openModal(trigger.dataset.enquiryType || trigger.textContent.trim() || 'Website enquiry');
     });
-  }
 
-  function handleForms() {
-    document.addEventListener('submit', async (e) => {
-      const form = e.target.closest('form[data-form]');
-      if (!form) return;
-      e.preventDefault();
+    modal.addEventListener('click', (event) => {
+      if (event.target.closest('[data-contact-close]')) closeModal();
+    });
 
-      const msg = form.querySelector('.form-message');
-      const endpoint = form.dataset.endpoint || S().formspree;
+    document.addEventListener('keydown', (event) => {
+      if (!modal.hidden && event.key === 'Escape') closeModal();
+    });
 
-      if (!endpoint || endpoint.includes('YOUR_FORM_ID')) {
-        if (msg) {
-          msg.textContent = 'Thank you — we will be in touch shortly. (Connect Formspree before launch.)';
-          msg.className = 'form-message success';
-        }
-        form.reset();
-        return;
-      }
+    form.addEventListener('submit', async (event) => {
+      event.preventDefault();
+      const submit = form.querySelector('button[type="submit"]');
+      const endpoint = site.contactEndpoint || '/.netlify/functions/contact';
+      const data = Object.fromEntries(new FormData(form).entries());
+
+      submit.disabled = true;
+      status.textContent = 'Sending...';
+      status.className = 'contact-modal-status is-pending';
 
       try {
-        const res = await fetch(endpoint, {
+        const response = await fetch(endpoint, {
           method: 'POST',
-          body: new FormData(form),
-          headers: { Accept: 'application/json' },
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(data),
         });
-        if (res.ok) {
-          if (msg) {
-            msg.textContent = 'Thank you — we will be in touch shortly.';
-            msg.className = 'form-message success';
-          }
-          form.reset();
-        } else {
-          throw new Error('Submit failed');
-        }
-      } catch {
-        if (msg) {
-          msg.textContent = `There was an error. Please email ${S().email} directly.`;
-          msg.className = 'form-message error';
-        }
+        const result = await response.json().catch(() => ({}));
+        if (!response.ok) throw new Error(result.message || 'Submit failed');
+
+        status.textContent = result.message || 'Thank you. We will be in touch shortly.';
+        status.className = 'contact-modal-status is-success';
+        form.reset();
+      } catch (error) {
+        status.innerHTML = `${error.message || 'There was a problem sending the enquiry.'} Please email <a href="mailto:${site.email}">${site.email}</a> directly.`;
+        status.className = 'contact-modal-status is-error';
+      } finally {
+        submit.disabled = false;
       }
     });
   }
@@ -543,7 +613,7 @@
     injectSeoMeta();
     renderHeader();
     renderFooter();
-    initFormEndpoints();
+    initContactModal();
     initContactInfo();
     initPageSections();
     initFaq();
@@ -553,6 +623,5 @@
     initHeaderScroll();
     initScrollReveal();
     initLightbox();
-    handleForms();
   });
 })();

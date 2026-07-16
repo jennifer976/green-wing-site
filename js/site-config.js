@@ -3,7 +3,7 @@ window.GW_SITE = {
   name: 'Green Wing Energy Solutions',
   phone: '07942 860052',
   phoneTel: '+447942860052',
-  email: 'info@greenwingenergysolutions.com',
+  email: 'joncullum@greenwinguk.com',
   address: "149 Capstone Road | Bournemouth | Dorset | BH8 8RZ",
   addressHtml: "149 Capstone Road<br>Bournemouth<br>Dorset<br>BH8 8RZ",
   mapsQuery: "149 Capstone Road, Bournemouth, Dorset BH8 8RZ",
@@ -18,7 +18,7 @@ window.GW_SITE = {
   registeredOffice: '149, Capstone Road, Bournemouth, Dorset, BH8 8RZ',
   foundingDate: '2009',
   responseTime: 'We aim to reply within one working day.',
-  formspree: 'https://formspree.io/f/YOUR_FORM_ID', // Replace YOUR_FORM_ID with your Formspree form ID
+  contactEndpoint: '/.netlify/functions/contact',
   defaultOgImage: '/assets/images/hm-pg-bkgrd-img.jpg',
   social: {
     facebook: 'https://www.facebook.com/greenwingenergysolutions',
@@ -50,9 +50,15 @@ window.GW_SITE = {
       path: '/case-studies',
       image: '/assets/images/reporting-tool-backgrd.jpg',
     },
+    'referrals.html': {
+      title: 'Referrals & Endorsements | Green Wing Energy Solutions',
+      description: 'Most Green Wing work starts with a recommendation. Learn why operators, site teams and partners refer our evidence-led energy optimisation approach.',
+      path: '/referrals',
+      image: '/assets/images/green-wing-logo-full-colour.svg',
+    },
     'contact.html': {
       title: 'Contact | Green Wing Energy Solutions',
-      description: 'Tell us about your estate and we will arrange an energy review. Call 07942 860052 or email info@greenwingenergysolutions.com',
+      description: 'Tell us about your estate and we will arrange an energy review. Call 07942 860052 or email joncullum@greenwinguk.com',
       path: '/contact',
       image: '/assets/images/greenwing-wing-logo.jpg',
     },

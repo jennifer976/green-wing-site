@@ -373,12 +373,128 @@ section { padding: 4.5rem 0; position: relative; z-index: 2; }
   mix-blend-mode: multiply;
 }
 
-/* Forms */
+/* Contact cards */
 .form-box {
   background: #fff;
   padding: 2rem;
   border: 1px solid rgba(31, 51, 23, 0.12);
   max-width: 480px;
+}
+
+.direct-contact-box h4,
+.direct-contact-panel h2 {
+  margin-top: 0;
+}
+
+.direct-contact-box p,
+.direct-contact-panel p {
+  color: var(--green-muted);
+}
+
+.modal-open {
+  overflow: hidden;
+}
+
+.contact-modal[hidden] {
+  display: none;
+}
+
+.contact-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: grid;
+  place-items: center;
+  padding: 1.25rem;
+}
+
+.contact-modal-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(14, 24, 11, 0.68);
+  backdrop-filter: blur(5px);
+}
+
+.contact-modal-dialog {
+  position: relative;
+  width: min(100%, 620px);
+  max-height: min(90vh, 760px);
+  overflow: auto;
+  background: #fff;
+  border: 1px solid rgba(153, 204, 51, 0.22);
+  border-radius: 14px;
+  box-shadow: 0 28px 80px rgba(14, 24, 11, 0.28);
+  padding: clamp(1.35rem, 3vw, 2rem);
+}
+
+.contact-modal-close {
+  position: absolute;
+  top: 0.85rem;
+  right: 0.85rem;
+  width: 2rem;
+  height: 2rem;
+  border: 0;
+  border-radius: 50%;
+  background: rgba(31, 51, 23, 0.08);
+  color: var(--green-dark);
+  cursor: pointer;
+  font-size: 1.35rem;
+  line-height: 1;
+}
+
+.contact-modal-intro {
+  color: var(--green-muted);
+  margin-bottom: 1.35rem;
+  padding-right: 1.75rem;
+}
+
+.contact-modal-form {
+  display: grid;
+  gap: 0.95rem;
+}
+
+.contact-modal-form .form-group {
+  margin-bottom: 0;
+}
+
+.contact-modal-honeypot {
+  position: absolute;
+  left: -9999px;
+  opacity: 0;
+}
+
+.contact-modal-status {
+  display: none;
+  margin: 0;
+  padding: 0.8rem 0.9rem;
+  border-radius: 8px;
+  font-size: 0.95rem;
+}
+
+.contact-modal-status.is-pending,
+.contact-modal-status.is-success,
+.contact-modal-status.is-error {
+  display: block;
+}
+
+.contact-modal-status.is-pending {
+  background: rgba(153, 204, 51, 0.14);
+  color: var(--green-deep);
+}
+
+.contact-modal-status.is-success {
+  background: #e8f5e0;
+  color: var(--green-deep);
+}
+
+.contact-modal-status.is-error {
+  background: #fde8e8;
+  color: #8b0000;
+}
+
+.contact-modal button[disabled] {
+  cursor: progress;
+  opacity: 0.72;
 }
 
 .form-group { margin-bottom: 1rem; }
@@ -416,15 +532,6 @@ textarea { min-height: 120px; resize: vertical; }
   gap: 0.4rem;
   cursor: pointer;
 }
-
-.form-message {
-  margin-top: 1rem;
-  padding: 0.75rem;
-  display: none;
-}
-
-.form-message.success { display: block; background: #e8f5e0; color: var(--green-deep); }
-.form-message.error { display: block; background: #fde8e8; color: #8b0000; }
 
 /* Split image section */
 .split-section { display: grid; grid-template-columns: 1fr 1fr; min-height: 400px; }
@@ -1337,6 +1444,77 @@ textarea { min-height: 120px; resize: vertical; }
   font-style: normal;
   color: var(--green-accent);
   font-weight: 500;
+}
+
+/* Referrals page */
+.referral-hero {
+  background:
+    linear-gradient(135deg, rgba(153, 204, 51, 0.14), transparent 48%),
+    var(--bg-light);
+}
+
+.referral-proof-grid {
+  display: grid;
+  grid-template-columns: minmax(240px, 0.75fr) minmax(0, 1.25fr);
+  gap: 2rem;
+  align-items: stretch;
+}
+
+.referral-stat-card,
+.referral-copy-card,
+.endorsement-empty-state {
+  background: #fff;
+  border: 1px solid rgba(31, 51, 23, 0.1);
+  border-radius: 10px;
+  box-shadow: 0 10px 28px rgba(31, 51, 23, 0.05);
+}
+
+.referral-stat-card {
+  padding: 2.25rem;
+  border-left: 4px solid var(--green-accent);
+}
+
+.referral-stat-card .proof-stat {
+  margin-bottom: 0.25rem;
+}
+
+.referral-stat-card p:last-child,
+.referral-copy-card p,
+.endorsement-empty-state p {
+  color: var(--green-muted);
+}
+
+.referral-copy-card {
+  padding: 2.25rem;
+}
+
+.referral-copy-card h2 {
+  max-width: 18ch;
+  color: var(--green-deep);
+  font-weight: 500;
+}
+
+.endorsement-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+.endorsement-empty-state {
+  max-width: 760px;
+  padding: 2.25rem;
+}
+
+.endorsement-empty-state h3 {
+  color: var(--green-deep);
+  font-weight: 500;
+}
+
+@media (max-width: 900px) {
+  .referral-proof-grid,
+  .endorsement-grid {
+    grid-template-columns: 1fr;
+  }
 }
 
 /* Solution cards */
@@ -3111,38 +3289,22 @@ body.lightbox-open {
   color: rgba(255, 255, 255, 0.45);
 }
 
-.footer-newsletter-inline {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 0.5rem;
+.footer-direct-contact {
+  margin: 0;
 }
 
-.footer-newsletter-inline input[type="email"] {
-  width: 200px;
-  padding: 0.45rem 0.7rem;
-  border: 1px solid rgba(255, 255, 255, 0.25);
-  background: rgba(255, 255, 255, 0.08);
+.footer-direct-contact a {
   color: #fff;
-  font-family: inherit;
-  font-size: 0.85rem;
-}
-
-.footer-newsletter-inline input::placeholder {
-  color: rgba(255, 255, 255, 0.45);
-}
-
-.btn-newsletter {
-  border-color: rgba(255, 255, 255, 0.4);
-  color: #fff;
-  padding: 0.45rem 1rem;
+  font-family: 'Montserrat', sans-serif;
   font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  text-decoration: none;
+  text-transform: uppercase;
 }
 
-.btn-newsletter:hover {
-  background: var(--green-accent);
-  border-color: var(--green-accent);
-  color: var(--green-dark);
+.footer-direct-contact a:hover {
+  color: var(--green-accent);
 }
 
 .visually-hidden {

@@ -1,6 +1,21 @@
 const path = require('path');
 const solutionsCategories = require('./_data/solutions-categories.json');
 
+function insightHref(item) {
+  const inputPath = item && (item.inputPath || (item.page && item.page.inputPath));
+  if (inputPath) {
+    const clean = inputPath.replace(/\\/g, '/').replace(/^\.\//, '');
+    if (clean.startsWith('content/insights/')) {
+      return `/${clean.replace(/^content\//, '').replace(/\.(md|html)$/, '.html')}`;
+    }
+    if (clean.startsWith('insights/')) {
+      return `/${clean.replace(/\.(md|html)$/, '.html')}`;
+    }
+  }
+
+  return (item && item.page && item.page.url) || (item && item.url) || '#';
+}
+
 module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy('assets');
   eleventyConfig.addPassthroughCopy('css');
@@ -31,6 +46,7 @@ module.exports = function (eleventyConfig) {
   });
 
   eleventyConfig.addFilter('urlEncode', (value) => encodeURIComponent(String(value || '')));
+  eleventyConfig.addFilter('insightHref', insightHref);
 
   eleventyConfig.addCollection('insightsSorted', (api) =>
     api.getFilteredByTag('insight').sort((a, b) => {
@@ -63,7 +79,7 @@ module.exports = function (eleventyConfig) {
   );
 
   eleventyConfig.addFilter('relatedInsights', (posts, currentUrl, limit = 3) =>
-    posts.filter((p) => p.url !== currentUrl).slice(0, limit)
+    posts.filter((p) => insightHref(p) !== currentUrl).slice(0, limit)
   );
 
   eleventyConfig.addFilter('featuredInsight', (posts) => {
@@ -72,7 +88,7 @@ module.exports = function (eleventyConfig) {
   });
 
   eleventyConfig.addFilter('otherInsights', (posts, featuredUrl) =>
-    posts.filter((p) => p.url !== featuredUrl)
+    posts.filter((p) => insightHref(p) !== featuredUrl)
   );
 
   eleventyConfig.addFilter('assetPath', (path, root = '') => {

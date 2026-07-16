@@ -21,7 +21,7 @@
     "name": "Green Wing Energy Solutions",
     "url": "https://greenwingenergysolutions.com",
     "telephone": "+447942860052",
-    "email": "info@greenwingenergysolutions.com",
+    "email": "joncullum@greenwinguk.com",
     "description": "Independent commercial energy optimisation — discovery assessments, Discovery Assessment Reports and Roadmaps, and Energy Optimisation as a Service.",
     "address": {
       "@type": "PostalAddress",
@@ -42,7 +42,7 @@
   <main id="main-content">
     <section class="hero hero-video" id="hero" aria-label="Introduction">
       <div class="hero-media" id="hero-media">
-        <video class="hero-bg-video" autoplay muted playsinline preload="auto" poster="{{ homepageImages.heroPoster | assetPath }}">
+        <video class="hero-bg-video" autoplay muted playsinline preload="metadata" poster="{{ homepageImages.heroPoster | assetPath }}">
           {% if homepageImages.heroVideo %}
           <source src="{{ homepageImages.heroVideo | assetPath }}" type="video/mp4">
           {% endif %}
@@ -305,14 +305,11 @@
           <p>See exactly what you'd receive — a worked example showing how we surface hidden waste, rank the opportunities and set out the savings logic.</p>
           <p><button type="button" class="btn btn-arrow" data-lightbox="{{ homepageImages.roadmap.image | assetPath }}" data-lightbox-alt="{{ homepageImages.roadmap.alt }}">Preview the sample first</button></p>
         </div>
-        <form class="form-box" data-form="sample-roadmap">
-          <div class="form-group">
-            <label for="roadmap-email">Email *</label>
-            <input type="email" id="roadmap-email" name="email" required>
-          </div>
-          <button type="submit" class="btn btn-solid">Send me the sample</button>
-          <p class="form-message" role="status"></p>
-        </form>
+        <div class="form-box direct-contact-box">
+          <h4>Want the sample?</h4>
+          <p>Email Jon and ask for the Discovery Assessment Report and Roadmap sample. He can also talk through whether it is relevant for your site.</p>
+          <a href="mailto:joncullum@greenwinguk.com?subject=Sample%20Discovery%20Assessment%20Report%20and%20Roadmap%20request" class="btn btn-solid btn-arrow" data-contact-modal data-enquiry-type="Sample Discovery Assessment Report and Roadmap request">Request the sample</a>
+        </div>
       </div>
     </section>
 

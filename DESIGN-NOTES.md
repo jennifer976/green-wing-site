@@ -56,7 +56,7 @@ These are MIT-licensed or similar — use individual components, not full themes
 - [x] Clean URL redirects via `netlify.toml`
 
 **Before launch:**
-- [ ] Replace `YOUR_FORM_ID` in forms and `js/site-config.js`
+- [ ] Add `RESEND_API_KEY`, `CONTACT_TO_EMAIL`, and `CONTACT_FROM_EMAIL` in Netlify for the lightweight enquiry form
 - [ ] Submit sitemap to Google Search Console
 - [ ] Confirm `[CHECK]` items in content spec (founding year, logo permissions, Groundwork accreditation)
 - [ ] Add GA4 or privacy-friendly analytics if needed

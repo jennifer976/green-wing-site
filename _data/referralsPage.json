@@ -1,0 +1,18 @@
+{
+  "heroEyebrow": "Referrals and endorsements",
+  "title": "Most of our work starts with a recommendation.",
+  "lead": "Around 60-70% of Green Wing's work comes through referrals. Operators, site teams and partners recommend us because the process is practical, evidence-led and focused on savings that can be verified.",
+  "intro": {
+    "eyebrow": "Why referrals matter",
+    "title": "Trust is usually earned before the first meeting.",
+    "body": "Energy optimisation touches operations, budgets and long-term site decisions. A referral gives new clients confidence that Green Wing has already been trusted on real operating sites, has worked constructively with teams, and can turn findings into practical next steps.",
+    "items": [
+      "Recommendations from operators, partners and site contacts drive the majority of our new conversations.",
+      "We keep advice independent, so a recommendation is based on suitability rather than supplier preference.",
+      "Every engagement is built around clear findings, ranked actions and a route to proving the savings."
+    ]
+  },
+  "placeholderTitle": "Endorsements will appear here as clients approve them.",
+  "placeholderBody": "We are collecting approved comments from clients, partners and site teams. Once permission is confirmed, this page can show short endorsements with names, roles and context.",
+  "endorsements": []
+}

@@ -369,3 +369,31 @@ collections:
               - { label: Quote, name: quote, widget: text }
               - { label: Name / role, name: name, widget: string }
               - { label: Context, name: context, widget: string, required: false }
+      - name: referrals_page
+        label: Referrals and endorsements page
+        file: _data/referralsPage.json
+        fields:
+          - { label: Hero eyebrow, name: heroEyebrow, widget: string }
+          - { label: Page title, name: title, widget: string }
+          - { label: Intro paragraph, name: lead, widget: text }
+          - label: Referral explanation
+            name: intro
+            widget: object
+            fields:
+              - { label: Eyebrow, name: eyebrow, widget: string }
+              - { label: Title, name: title, widget: string }
+              - { label: Body, name: body, widget: text }
+              - label: Bullet points
+                name: items
+                widget: list
+                field: { label: Point, name: point, widget: string }
+          - { label: Placeholder title, name: placeholderTitle, widget: string }
+          - { label: Placeholder body, name: placeholderBody, widget: text }
+          - label: Endorsements
+            name: endorsements
+            widget: list
+            required: false
+            fields:
+              - { label: Quote, name: quote, widget: text }
+              - { label: Name / role, name: name, widget: string }
+              - { label: Context, name: context, widget: string, required: false }

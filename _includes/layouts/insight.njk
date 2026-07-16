@@ -43,7 +43,7 @@ layout: layouts/base.njk
       <h2>More insights</h2>
       <ul>
         {% for post in related %}
-        <li><a href="{{ root }}insights/{{ post.fileSlugStem }}.html">{{ post.data.title }}</a></li>
+        <li><a href="{{ post | insightHref }}">{{ post.data.title }}</a></li>
         {% endfor %}
       </ul>
     </aside>
