@@ -31,9 +31,47 @@ function fieldRow(label, value) {
   if (!value) return '';
   return `
     <tr>
-      <td style="padding:10px 0;color:#5c684f;font-size:13px;width:140px;">${escapeHtml(label)}</td>
-      <td style="padding:10px 0;color:#1f3317;font-size:15px;font-weight:600;">${escapeHtml(value)}</td>
+      <td style="padding:10px 0;color:#5c684f;font-size:13px;font-weight:700;width:150px;vertical-align:top;text-transform:uppercase;letter-spacing:0.06em;">${escapeHtml(label)}</td>
+      <td style="padding:10px 0;color:#1f3317;font-size:15px;font-weight:600;vertical-align:top;">${escapeHtml(value)}</td>
     </tr>`;
+}
+
+async function sendResendEmail({ apiKey, from, to, replyTo, subject, text, html, bcc }) {
+  const payload = {
+    from,
+    to: Array.isArray(to) ? to : [to],
+    subject,
+    text,
+    html,
+  };
+  if (replyTo) payload.reply_to = replyTo;
+  if (bcc) payload.bcc = Array.isArray(bcc) ? bcc : [bcc];
+
+  const response = await fetch('https://api.resend.com/emails', {
+    method: 'POST',
+    headers: {
+      Authorization: `Bearer ${apiKey}`,
+      'Content-Type': 'application/json',
+      'User-Agent': 'green-wing-site/1.0',
+    },
+    body: JSON.stringify(payload),
+  });
+
+  const bodyText = await response.text();
+  let bodyJson = null;
+  try {
+    bodyJson = JSON.parse(bodyText);
+  } catch {
+    bodyJson = null;
+  }
+
+  return {
+    ok: response.ok,
+    status: response.status,
+    bodyText,
+    bodyJson,
+    id: bodyJson && bodyJson.id,
+  };
 }
 
 function greenWingEmail({ eyebrow, title, intro, body, ctaUrl, ctaLabel, footer }) {
@@ -112,7 +150,9 @@ exports.handler = async function handler(event) {
   const enquiryType = clean(payload.enquiryType, 160);
   const message = clean(payload.message);
   const page = clean(payload.page, 300);
-  const sampleRequested = /sample|report|roadmap/i.test(enquiryType);
+  const sampleRequested =
+    /sample|report|roadmap|brochure/i.test(enquiryType) ||
+    /sample|brochure|example report|example roadmap/i.test(message);
 
   if (!name || !email || !message) {
     return json(400, { message: 'Please add your name, email and message.' });
@@ -133,12 +173,25 @@ exports.handler = async function handler(event) {
     estateSize ? `Estate size: ${estateSize}` : null,
     enquiryType ? `Enquiry type: ${enquiryType}` : null,
     page ? `Page: ${page}` : null,
+    sampleRequested ? 'Sample documents requested: yes' : null,
+    sampleRequested ? `Assessment report: ${sampleAssessmentUrl}` : null,
+    sampleRequested ? `Roadmap: ${sampleRoadmapUrl}` : null,
     '',
     'Message:',
     message,
     '',
     'Reply directly to this email to respond to the enquirer.',
   ].filter((line) => line !== null);
+
+  const sampleLinksHtml = sampleRequested
+    ? `
+      <div style="margin-top:18px;padding:18px;border-left:4px solid #99cc33;background:#f6f8f2;">
+        <p style="margin:0 0 8px;color:#5c684f;font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;">Sample documents requested</p>
+        <p style="margin:0 0 10px;color:#1f3317;font-size:15px;line-height:1.6;">An automatic copy should also be emailed to <strong>${escapeHtml(email)}</strong>. If that fails, forward these links:</p>
+        <p style="margin:0 0 8px;"><a href="${escapeHtml(sampleAssessmentUrl)}" style="color:#1f3317;font-weight:700;">Open Assessment Report PDF</a></p>
+        <p style="margin:0;"><a href="${escapeHtml(sampleRoadmapUrl)}" style="color:#1f3317;font-weight:700;">Open Roadmap PDF</a></p>
+      </div>`
+    : '';
 
   const html = greenWingEmail({
     eyebrow: 'Green Wing Energy Solutions',
@@ -156,30 +209,25 @@ exports.handler = async function handler(event) {
       <div style="margin-top:18px;padding:18px;border-left:4px solid #99cc33;background:#f6f8f2;">
         <p style="margin:0 0 8px;color:#5c684f;font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;">Message</p>
         <p style="margin:0;color:#1f3317;font-size:16px;line-height:1.6;white-space:pre-line;">${escapeHtml(message)}</p>
-      </div>`,
-    footer: `Reply directly to this email to respond to ${escapeHtml(name)}.`,
+      </div>
+      ${sampleLinksHtml}`,
+    footer: `Reply directly to this email to respond to ${escapeHtml(name)} (${escapeHtml(email)}).`,
   });
 
-  const response = await fetch('https://api.resend.com/emails', {
-    method: 'POST',
-    headers: {
-      Authorization: `Bearer ${apiKey}`,
-      'Content-Type': 'application/json',
-    },
-    body: JSON.stringify({
-      from: fromEmail,
-      to: [toEmail],
-      reply_to: email,
-      subject: `Green Wing website enquiry: ${enquiryType || name}`,
-      text: lines.join('\n'),
-      html,
-    }),
+  const response = await sendResendEmail({
+    apiKey,
+    from: fromEmail,
+    to: toEmail,
+    replyTo: email,
+    subject: `Green Wing website enquiry: ${enquiryType || name}`,
+    text: lines.join('\n'),
+    html,
   });
 
   if (!response.ok) {
     console.error('Resend internal enquiry send failed', {
       status: response.status,
-      body: await response.text(),
+      body: response.bodyText,
       to: toEmail,
       from: fromEmail,
     });
@@ -188,7 +236,12 @@ exports.handler = async function handler(event) {
     });
   }
 
-  console.log('Internal enquiry email sent', { to: toEmail, enquiryType, sampleRequested });
+  console.log('Internal enquiry email sent', {
+    to: toEmail,
+    enquiryType,
+    sampleRequested,
+    id: response.id,
+  });
 
   if (sampleRequested) {
     const sampleText = [
@@ -223,31 +276,57 @@ exports.handler = async function handler(event) {
       footer: `Green Wing Energy Solutions<br>Energy saving solutions that do not cost the Earth.`,
     });
 
-    const sampleResponse = await fetch('https://api.resend.com/emails', {
-      method: 'POST',
-      headers: {
-        Authorization: `Bearer ${apiKey}`,
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({
-        from: fromEmail,
-        to: [email],
-        reply_to: toEmail,
-        subject: 'Your Green Wing example report',
-        text: sampleText,
-        html: sampleHtml,
-      }),
+    const sampleResponse = await sendResendEmail({
+      apiKey,
+      from: fromEmail,
+      to: email,
+      replyTo: toEmail,
+      subject: 'Your Green Wing example report',
+      text: sampleText,
+      html: sampleHtml,
     });
 
     if (!sampleResponse.ok) {
-      const sampleErrorBody = await sampleResponse.text();
       console.error('Resend sample report auto-reply failed', {
         status: sampleResponse.status,
-        body: sampleErrorBody,
+        body: sampleResponse.bodyText,
         to: email,
         from: fromEmail,
       });
-      // Still give the visitor the documents on-screen if email delivery failed
+
+      // Notify the team so they can forward the docs manually
+      await sendResendEmail({
+        apiKey,
+        from: fromEmail,
+        to: toEmail,
+        subject: `ACTION NEEDED: sample auto-reply failed for ${email}`,
+        text: [
+          'The visitor requested sample documents, but the automatic email to them failed.',
+          '',
+          `Visitor: ${name}`,
+          `Email: ${email}`,
+          `Resend status: ${sampleResponse.status}`,
+          `Resend body: ${sampleResponse.bodyText}`,
+          '',
+          `Please forward these links to ${email}:`,
+          sampleAssessmentUrl,
+          sampleRoadmapUrl,
+          '',
+          'Likely cause: CONTACT_FROM_EMAIL domain is not fully verified in Resend for sending to external addresses.',
+        ].join('\n'),
+        html: greenWingEmail({
+          eyebrow: 'Action needed',
+          title: 'Sample auto-reply failed',
+          intro: `The visitor ${name} (${email}) requested sample documents, but Resend could not email them automatically.`,
+          body: `
+            <p style="margin:0 0 12px;color:#1f3317;font-size:15px;line-height:1.6;">Please forward these links to <strong>${escapeHtml(email)}</strong>:</p>
+            <p style="margin:0 0 8px;"><a href="${escapeHtml(sampleAssessmentUrl)}" style="color:#1f3317;font-weight:700;">Assessment Report PDF</a></p>
+            <p style="margin:0 0 16px;"><a href="${escapeHtml(sampleRoadmapUrl)}" style="color:#1f3317;font-weight:700;">Roadmap PDF</a></p>
+            <p style="margin:0;color:#5c684f;font-size:13px;line-height:1.5;">Resend status ${escapeHtml(String(sampleResponse.status))}: ${escapeHtml(sampleResponse.bodyText).slice(0, 500)}</p>`,
+          footer: 'Usually this means the Resend sending domain is not verified for external recipients.',
+        }),
+      });
+
       return json(200, {
         message: 'We received your enquiry. The automatic email could not be sent, so please download the examples below. Check spam if an email arrives later.',
         sampleLinks: {
@@ -258,7 +337,7 @@ exports.handler = async function handler(event) {
       });
     }
 
-    console.log('Sample report auto-reply sent', { to: email, from: fromEmail });
+    console.log('Sample report auto-reply sent', { to: email, from: fromEmail, id: sampleResponse.id });
     return json(200, {
       message: 'Thank you. The example report has been emailed to you — please also check your spam/junk folder. You can download the files below now.',
       sampleLinks: {
@@ -305,31 +384,29 @@ exports.handler = async function handler(event) {
     footer: `Green Wing Energy Solutions<br>Energy saving solutions that do not cost the Earth.`,
   });
 
-  const auditResponse = await fetch('https://api.resend.com/emails', {
-    method: 'POST',
-    headers: {
-      Authorization: `Bearer ${apiKey}`,
-      'Content-Type': 'application/json',
-    },
-    body: JSON.stringify({
-      from: fromEmail,
-      to: [email],
-      reply_to: toEmail,
-      subject: 'Thank you for contacting Green Wing',
-      text: auditText,
-      html: auditHtml,
-    }),
+  const auditResponse = await sendResendEmail({
+    apiKey,
+    from: fromEmail,
+    to: email,
+    replyTo: toEmail,
+    subject: 'Thank you for contacting Green Wing',
+    text: auditText,
+    html: auditHtml,
   });
 
   if (!auditResponse.ok) {
     console.error('Resend audit auto-reply failed', {
       status: auditResponse.status,
-      body: await auditResponse.text(),
+      body: auditResponse.bodyText,
+      to: email,
+      from: fromEmail,
     });
-    return json(502, {
-      message: 'We received your enquiry, but there was a problem sending the confirmation email. We will be in touch shortly.',
+    // Enquiry already reached the team — do not fail the form for auto-reply issues
+    return json(200, {
+      message: 'Thank you. We received your enquiry and will be in touch shortly.',
+      emailDelivered: false,
     });
   }
 
-  return json(200, { message: 'Thank you. We will be in touch shortly.' });
+  return json(200, { message: 'Thank you. We will be in touch shortly.', emailDelivered: true });
 };
