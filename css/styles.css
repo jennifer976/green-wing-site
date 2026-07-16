@@ -332,6 +332,11 @@ section { padding: 4.5rem 0; position: relative; z-index: 2; }
   max-width: 220px;
 }
 
+/* Tones down near-black marks so the strip reads as one consistent grey */
+.logo-marquee-set .logo-marquee-img--soften {
+  opacity: 0.45;
+}
+
 .logo-marquee-set img[src$=".jpg"] {
   mix-blend-mode: normal;
 }
@@ -780,10 +785,15 @@ textarea { min-height: 120px; resize: vertical; }
 
 /* Responsive */
 @media (max-width: 900px) {
-  .grid-2, .grid-3, .grid-4, .legislation-grid, .split-section,
+  .grid-2, .legislation-grid, .split-section,
   .partner-assurance-panel,
   .solution-block, .founder-block, .footer-grid, .sector-grid {
     grid-template-columns: 1fr;
+  }
+
+  /* Two columns on tablets so card rows don't stack into a long single column */
+  .grid-3, .grid-4 {
+    grid-template-columns: repeat(2, 1fr);
   }
 
   .partner-assurance-panel {
@@ -829,6 +839,7 @@ textarea { min-height: 120px; resize: vertical; }
 @media (max-width: 600px) {
   section { padding: 3rem 0; }
   .hero { min-height: 55vh; }
+  .grid-3, .grid-4 { grid-template-columns: 1fr; }
 }
 
 /* Skip link */
@@ -1764,6 +1775,15 @@ textarea { min-height: 120px; resize: vertical; }
   mix-blend-mode: normal;
 }
 
+.logo-panel-caption {
+  max-width: 46rem;
+  margin: 1.75rem auto 0;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.82rem;
+  letter-spacing: 0.04em;
+  color: var(--green-muted);
+}
+
 .partner-callout {
   text-align: center;
   padding: 3rem 0;
@@ -2571,15 +2591,19 @@ textarea { min-height: 120px; resize: vertical; }
   color: var(--green-dark);
 }
 
+.cta-band .cta-micro {
+  color: rgba(255, 255, 255, 0.78);
+}
+
 @media (max-width: 900px) {
   .main-nav { flex: none; width: 100%; order: 3; }
   .header-cta { display: none; }
   .footer-columns { grid-template-columns: 1fr 1fr; }
   .hero-video { min-height: 70vh; }
+  .hero-copy { padding-inline: 1.25rem; }
 }
 
 @media (max-width: 768px) {
-  .hero-copy { padding-left: 0; }
   .roadmap-split { grid-template-columns: 1fr; }
   .roadmap-media { order: -1; max-width: 360px; margin-inline: auto; }
 }
@@ -2963,11 +2987,16 @@ body.lightbox-open {
 
 .trust-subline {
   margin: -0.5rem auto 1.25rem;
-  max-width: 36rem;
+  max-width: 44rem;
   font-family: 'Montserrat', sans-serif;
   font-size: 0.82rem;
   letter-spacing: 0.04em;
   color: var(--green-muted);
+}
+
+/* Keep each trust clause on one line so wraps happen at the separators */
+.trust-subline span {
+  white-space: nowrap;
 }
 
 /* Problem section */
