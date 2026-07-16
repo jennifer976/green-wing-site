@@ -235,5 +235,63 @@ exports.handler = async function handler(event) {
     return json(200, { message: 'Thank you. The example report has been emailed to you.' });
   }
 
+  const auditText = [
+    `Hi ${name},`,
+    '',
+    'Thank you for contacting Green Wing Energy Solutions.',
+    '',
+    'We help commercial sites reduce wasted energy by reviewing how the building actually runs, identifying practical savings opportunities, and setting out clear next steps that can be measured.',
+    '',
+    'If you would like to move forward or book an energy audit, please reply to this email with:',
+    '- Any available half-hourly energy data',
+    '- Three preferred dates for an audit or discovery call',
+    '- Any questions you would like us to answer',
+    '',
+    'Someone from Green Wing will respond within two working days.',
+    '',
+    'Green Wing Energy Solutions',
+    'Energy saving solutions that do not cost the Earth.',
+  ].join('\n');
+
+  const auditHtml = greenWingEmail({
+    eyebrow: 'Green Wing Energy Solutions',
+    title: 'Thank you for contacting us',
+    intro: `Hi ${name}, thank you for contacting Green Wing Energy Solutions.`,
+    body: `
+      <p style="margin:0;color:#1f3317;font-size:16px;line-height:1.6;">We help commercial sites reduce wasted energy by reviewing how the building actually runs, identifying practical savings opportunities, and setting out clear next steps that can be measured.</p>
+      <div style="margin-top:18px;padding:18px;border-left:4px solid #99cc33;background:#f6f8f2;">
+        <p style="margin:0 0 10px;color:#1f3317;font-size:15px;font-weight:700;">If you would like to move forward or book an energy audit, please reply to this email with:</p>
+        <ul style="margin:0;padding-left:20px;color:#5c684f;font-size:14px;line-height:1.7;">
+          <li>Any available half-hourly energy data</li>
+          <li>Three preferred dates for an audit or discovery call</li>
+          <li>Any questions you would like us to answer</li>
+        </ul>
+      </div>
+      <p style="margin:18px 0 0;color:#1f3317;font-size:15px;line-height:1.6;">Someone from Green Wing will respond within two working days.</p>`,
+    footer: `Green Wing Energy Solutions<br>Energy saving solutions that do not cost the Earth.`,
+  });
+
+  const auditResponse = await fetch('https://api.resend.com/emails', {
+    method: 'POST',
+    headers: {
+      Authorization: `Bearer ${apiKey}`,
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({
+      from: fromEmail,
+      to: [email],
+      reply_to: toEmail,
+      subject: 'Thank you for contacting Green Wing',
+      text: auditText,
+      html: auditHtml,
+    }),
+  });
+
+  if (!auditResponse.ok) {
+    return json(502, {
+      message: 'We received your enquiry, but there was a problem sending the confirmation email. We will be in touch shortly.',
+    });
+  }
+
   return json(200, { message: 'Thank you. We will be in touch shortly.' });
 };
