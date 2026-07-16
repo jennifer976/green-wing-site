@@ -172,6 +172,10 @@ exports.handler = async function handler(event) {
   });
 
   if (!response.ok) {
+    console.error('Resend internal enquiry send failed', {
+      status: response.status,
+      body: await response.text(),
+    });
     return json(502, {
       message: 'There was a problem sending the enquiry. Please email joncullum@greenwinguk.com directly.',
     });
@@ -227,6 +231,10 @@ exports.handler = async function handler(event) {
     });
 
     if (!sampleResponse.ok) {
+      console.error('Resend sample report auto-reply failed', {
+        status: sampleResponse.status,
+        body: await sampleResponse.text(),
+      });
       return json(502, {
         message: 'We received your enquiry, but there was a problem sending the example report. Please email joncullum@greenwinguk.com directly.',
       });
@@ -288,6 +296,10 @@ exports.handler = async function handler(event) {
   });
 
   if (!auditResponse.ok) {
+    console.error('Resend audit auto-reply failed', {
+      status: auditResponse.status,
+      body: await auditResponse.text(),
+    });
     return json(502, {
       message: 'We received your enquiry, but there was a problem sending the confirmation email. We will be in touch shortly.',
     });
