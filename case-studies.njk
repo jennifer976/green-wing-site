@@ -55,14 +55,19 @@ eleventyExcludeFromCollections: true
 
 <section class="section-light page-section ymca-highlight">
   <div class="container ymca-highlight-panel">
-    <p class="content-label">{{ caseStudiesPage.ymcaSupport.eyebrow }}</p>
-    <h2>{{ caseStudiesPage.ymcaSupport.title }}</h2>
-    <p>{{ caseStudiesPage.ymcaSupport.body }}</p>
-    <ul class="check-pills">
-      {% for item in caseStudiesPage.ymcaSupport.items %}
-      <li>{{ item }}</li>
-      {% endfor %}
-    </ul>
+    <div class="ymca-highlight-copy">
+      <p class="content-label">{{ caseStudiesPage.ymcaSupport.eyebrow }}</p>
+      <h2>{{ caseStudiesPage.ymcaSupport.title }}</h2>
+      <p>{{ caseStudiesPage.ymcaSupport.body }}</p>
+      <ul class="check-pills">
+        {% for item in caseStudiesPage.ymcaSupport.items %}
+        <li>{{ item }}</li>
+        {% endfor %}
+      </ul>
+    </div>
+    <div class="ymca-highlight-logo" aria-label="YMCA">
+      <img src="assets/images/ymca-logo.png" alt="YMCA" width="220" height="84" loading="lazy">
+    </div>
   </div>
 </section>
 

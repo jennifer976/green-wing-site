@@ -8,7 +8,6 @@
     { href: 'services.html', label: 'Services' },
     { href: 'solutions.html', label: 'Solutions' },
     { href: 'case-studies.html', label: 'Results' },
-    { href: 'referrals.html', label: 'Referrals' },
     { href: 'about.html', label: 'About' },
     { href: 'insights.html', label: 'Insights' },
     { href: 'contact.html', label: 'Contact' },
@@ -123,7 +122,6 @@
             <a href="${pageHref('eoaas.html')}">EOaaS</a>
             <span class="footer-sep" aria-hidden="true">·</span>
             <a href="${pageHref('about.html')}">About</a>
-            <a href="${pageHref('referrals.html')}">Referrals</a>
             <a href="${pageHref('case-studies.html')}">Results</a>
             <a href="${pageHref('insights.html')}">Insights</a>
             <a href="${pageHref('contact.html')}">Contact</a>
