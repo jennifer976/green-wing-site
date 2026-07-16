@@ -84,7 +84,7 @@ module.exports = function (eleventyConfig) {
 
   eleventyConfig.addFilter('featuredInsight', (posts) => {
     if (!posts.length) return null;
-    return posts.find((p) => p.data.featured) || posts[0];
+    return posts[0];
   });
 
   eleventyConfig.addFilter('otherInsights', (posts, featuredUrl) =>
