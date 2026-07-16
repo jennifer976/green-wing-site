@@ -1,4 +1,4 @@
-/* Green Wing Energy Solutions ‚Äî static site styles */
+/* Green Wing Energy Solutions ù static site styles */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Montserrat:wght@400;500;600&family=Roboto+Slab:wght@300;400;500&display=swap');
 
 :root {
@@ -151,7 +151,7 @@ h4 {
 }
 
 .btn-arrow::after {
-  content: '‚Üí';
+  content: '?';
   font-size: 1.1em;
 }
 
@@ -273,7 +273,7 @@ section { padding: 4.5rem 0; position: relative; z-index: 2; }
 .legislation-grid h4 { margin-top: 1.5rem; }
 .legislation-grid ul { padding-left: 1.25rem; }
 
-/* Client logos ‚Äî single-line marquee */
+/* Client logos ù single-line marquee */
 .logo-marquee-wrap {
   background: #fff;
   padding: 1.75rem 0 2rem;
@@ -987,7 +987,7 @@ textarea { min-height: 120px; resize: vertical; }
   margin-bottom: 0.75rem;
 }
 .check-list li::before {
-  content: '‚Äî';
+  content: 'ù';
   position: absolute;
   left: 0;
   color: var(--green-accent);
@@ -1110,7 +1110,7 @@ textarea { min-height: 120px; resize: vertical; }
   font-size: 1.5rem;
   color: var(--green-accent);
 }
-.faq-item.open .faq-question::after { content: '‚àí'; }
+.faq-item.open .faq-question::after { content: '?'; }
 .faq-answer {
   max-height: 0;
   overflow: hidden;
@@ -1440,7 +1440,7 @@ textarea { min-height: 120px; resize: vertical; }
 }
 
 .partner-assurance-list li::before {
-  content: '‚úì';
+  content: '?';
   position: absolute;
   left: 0;
   top: 0;
@@ -2003,7 +2003,7 @@ textarea { min-height: 120px; resize: vertical; }
 }
 
 .deliverables-list li::before {
-  content: '‚úì';
+  content: '?';
   position: absolute;
   left: 0;
   color: var(--green-accent);
@@ -2603,11 +2603,6 @@ textarea { min-height: 120px; resize: vertical; }
   .hero-copy { padding-inline: 1.25rem; }
 }
 
-@media (max-width: 768px) {
-  .roadmap-split { grid-template-columns: 1fr; }
-  .roadmap-media { order: -1; max-width: 360px; margin-inline: auto; }
-}
-
 @media (max-width: 600px) {
   section { padding: 3rem 0; }
   .footer-columns { grid-template-columns: 1fr; }
@@ -2875,7 +2870,7 @@ body.lightbox-open {
   }
 }
 
-/* ‚Äî‚Äî‚Äî Section motifs & dividers (site-wide) ‚Äî‚Äî‚Äî */
+/* ùùù Section motifs & dividers (site-wide) ùùù */
 
 /* Section dividers */
 .section-divider-wave {
@@ -2899,7 +2894,7 @@ body.lightbox-open {
 }
 
 .section-divider-rule::after {
-  content: '‚Äî';
+  content: 'ù';
   position: absolute;
   left: 50%;
   top: 50%;
@@ -3101,7 +3096,7 @@ body.lightbox-open {
   margin: 0;
 }
 
-/* Services ‚Äî featured + stack */
+/* Services ù featured + stack */
 .services-layout {
   display: grid;
   grid-template-columns: 1.15fr 0.85fr;
@@ -3158,7 +3153,7 @@ body.lightbox-open {
 }
 
 .service-featured-points li::before {
-  content: '‚Äî';
+  content: 'ù';
   position: absolute;
   left: 0;
   color: var(--green-accent);
@@ -3217,7 +3212,7 @@ body.lightbox-open {
 }
 
 .roadmap-includes li::before {
-  content: '‚Äî';
+  content: 'ù';
   position: absolute;
   left: 0;
   color: var(--green-accent);
@@ -3454,8 +3449,15 @@ body.lightbox-open {
 @media (max-width: 900px) {
   .problem-split,
   .services-layout,
+  .roadmap-split,
   .ymca-highlight-panel {
     grid-template-columns: 1fr;
+  }
+
+  .roadmap-media {
+    order: -1;
+    max-width: 360px;
+    margin-inline: auto;
   }
 
   .ymca-highlight-logo {
@@ -3574,4 +3576,252 @@ body.lightbox-open {
   opacity: 0.08;
   pointer-events: none;
   mix-blend-mode: multiply;
+}
+
+/* ùù Mobile polish (phones + small tablets) ùù */
+@media (max-width: 640px) {
+  :root {
+    --header-height: 72px;
+  }
+
+  .container {
+    width: min(100% - 1.75rem, var(--max-width));
+  }
+
+  .site-logo img {
+    width: 138px;
+    max-height: 46px;
+  }
+
+  .site-header.is-scrolled .site-logo img {
+    width: 124px;
+  }
+
+  .header-inner {
+    min-height: var(--header-height);
+    padding-block: 0.35rem;
+  }
+
+  .hero-video {
+    min-height: 0;
+    align-items: flex-start;
+  }
+
+  .hero .container {
+    padding-block: 1.5rem 2rem;
+  }
+
+  .hero-content {
+    padding: 0.75rem 0 1.25rem;
+  }
+
+  .hero-copy {
+    padding-inline: 0.85rem;
+  }
+
+  .hero-eyebrow {
+    font-size: 0.72rem;
+    letter-spacing: 0.14em;
+    margin-bottom: 0.5rem;
+  }
+
+  .hero-video h1 {
+    font-size: clamp(1.7rem, 7.2vw, 2rem);
+    max-width: none;
+    line-height: 1.18;
+    margin-bottom: 0.65rem;
+  }
+
+  .hero-video .lead {
+    font-size: 0.98rem;
+    line-height: 1.55;
+    margin-bottom: 1rem;
+  }
+
+  .hero-copy .btn-row,
+  .btn-row {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.75rem;
+  }
+
+  .hero-copy .btn,
+  .btn-row .btn,
+  .cta-band .btn,
+  .direct-contact-panel .btn,
+  .direct-contact-box .btn,
+  #sample-report .btn {
+    width: 100%;
+    justify-content: center;
+    text-align: center;
+  }
+
+  /* Stronger left/bottom wash so copy stays readable over the forest video */
+  .hero-video .hero-overlay {
+    background:
+      linear-gradient(180deg, rgba(255, 255, 255, 0.55) 0%, rgba(255, 255, 255, 0.35) 28%, rgba(245, 247, 244, 0.72) 62%, var(--bg-light) 100%),
+      linear-gradient(90deg, rgba(255, 255, 255, 0.92) 0%, rgba(255, 255, 255, 0.78) 42%, rgba(255, 255, 255, 0.35) 72%, transparent 100%);
+  }
+
+  .hero-video .stat-bar {
+    margin-top: 1.1rem;
+    padding-top: 0.85rem;
+    gap: 0.65rem 1.5rem;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .stat-item strong {
+    font-size: 1.15rem;
+  }
+
+  .trust-subline {
+    font-size: 0.76rem;
+    max-width: 100%;
+    line-height: 1.55;
+  }
+
+  .trust-subline span {
+    white-space: normal;
+  }
+
+  .tag-row {
+    gap: 0.4rem;
+    margin: 0.75rem 0 1.25rem;
+  }
+
+  .tag {
+    font-size: 0.7rem;
+    padding: 0.35rem 0.7rem;
+  }
+
+  .ymca-highlight {
+    padding-block: 2.25rem;
+  }
+
+  .ymca-highlight-panel {
+    padding: 1.25rem;
+    gap: 1.15rem;
+  }
+
+  .ymca-highlight-panel h2 {
+    font-size: 1.35rem;
+    max-width: none;
+  }
+
+  .ymca-highlight-logo {
+    max-width: 180px;
+    padding: 0.75rem;
+  }
+
+  .partner-assurance-panel {
+    padding: 1.35rem;
+  }
+
+  .service-featured-copy {
+    padding: 1.25rem;
+    gap: 0.9rem;
+  }
+
+  .service-featured h3 {
+    font-size: 1.1rem;
+  }
+
+  .form-box,
+  .direct-contact-box,
+  .contact-panel {
+    max-width: none;
+    width: 100%;
+    padding: 1.35rem;
+  }
+
+  #sample-report {
+    padding-block: 2.5rem;
+  }
+
+  #sample-report h3 {
+    font-size: 1.25rem;
+    line-height: 1.3;
+  }
+
+  .cta-band {
+    padding: 2.75rem 0;
+  }
+
+  .cta-band h2 {
+    font-size: 1.45rem;
+    max-width: 18ch;
+  }
+
+  .page-hero {
+    padding: 2rem 0 1.75rem;
+  }
+
+  .page-hero h1 {
+    font-size: clamp(1.75rem, 7vw, 2.15rem);
+  }
+
+  .contact-map iframe {
+    min-height: 200px;
+    height: 220px;
+  }
+
+  .contact-steps-step {
+    gap: 0.75rem;
+  }
+
+  .footer-links-inline {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.55rem 0;
+  }
+
+  .footer-links-inline a {
+    white-space: normal;
+    line-height: 1.35;
+  }
+
+  .solution-block-thumb {
+    min-height: 200px;
+  }
+
+  .review-scroll {
+    grid-auto-columns: minmax(260px, 85vw);
+  }
+
+  .logo-panel-caption {
+    font-size: 0.74rem;
+    line-height: 1.5;
+    padding-inline: 0.25rem;
+  }
+
+  .sector-tile {
+    min-height: 160px;
+  }
+
+  .media-frame {
+    padding: 0.85rem;
+  }
+
+  .founder-block {
+    gap: 1.35rem;
+  }
+
+  .value-card {
+    padding: 1.15rem;
+  }
+}
+
+@media (max-width: 400px) {
+  .container {
+    width: min(100% - 1.35rem, var(--max-width));
+  }
+
+  .hero-copy {
+    padding-inline: 0.65rem;
+  }
+
+  .ymca-highlight-panel {
+    padding: 1.1rem;
+  }
 }
