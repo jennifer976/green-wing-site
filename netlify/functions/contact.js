@@ -74,11 +74,19 @@ async function sendResendEmail({ apiKey, from, to, replyTo, subject, text, html,
   };
 }
 
-function greenWingEmail({ eyebrow, title, intro, body, ctaUrl, ctaLabel, footer }) {
+function greenWingEmail({ logoUrl, eyebrow, title, intro, body, ctaUrl, ctaLabel, footer }) {
+  const logoBlock = logoUrl
+    ? `<div style="background:#ffffff;border-radius:16px 16px 0 0;border:1px solid #e1e8da;border-bottom:0;padding:20px 28px;">
+          <img src="${escapeHtml(logoUrl)}" alt="Green Wing Energy Solutions" width="200" height="66" style="display:block;border:0;outline:none;text-decoration:none;max-width:200px;height:auto;" />
+        </div>`
+    : '';
+  const headerRadius = logoUrl ? '' : 'border-radius:16px 16px 0 0;';
+
   return `
     <div style="margin:0;padding:0;background:#f6f8f2;font-family:Arial,sans-serif;color:#1f3317;">
       <div style="max-width:680px;margin:0 auto;padding:28px 18px;">
-        <div style="background:#1f3317;border-radius:16px 16px 0 0;padding:24px 28px;color:#ffffff;">
+        ${logoBlock}
+        <div style="background:#1f3317;${headerRadius}padding:24px 28px;color:#ffffff;">
           <p style="margin:0 0 6px;color:#99cc33;font-size:12px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;">${escapeHtml(eyebrow)}</p>
           <h1 style="margin:0;font-size:26px;line-height:1.2;">${escapeHtml(title)}</h1>
           <p style="margin:10px 0 0;color:#dfe9d7;font-size:14px;">Energy saving solutions that do not cost the Earth.</p>
@@ -112,6 +120,9 @@ exports.handler = async function handler(event) {
     process.env.SITE_URL ||
     (requestHost ? `${requestProto}://${requestHost}` : 'https://greenwingenergysolutions.com')
   ).replace(/\/$/, '');
+  const logoUrl =
+    process.env.EMAIL_LOGO_URL ||
+    `${siteUrl}/assets/images/greenwing-energy-solutions-logo.jpg`;
   const sampleAssessmentUrl =
     process.env.SAMPLE_ASSESSMENT_REPORT_URL ||
     process.env.SAMPLE_REPORT_URL ||
@@ -194,6 +205,7 @@ exports.handler = async function handler(event) {
     : '';
 
   const html = greenWingEmail({
+    logoUrl,
     eyebrow: 'Green Wing Energy Solutions',
     title: 'New website enquiry',
     body: `
@@ -259,6 +271,7 @@ exports.handler = async function handler(event) {
     ].join('\n');
 
     const sampleHtml = greenWingEmail({
+      logoUrl,
       eyebrow: 'Green Wing Energy Solutions',
       title: 'Your example report',
       intro: `Hi ${name}, thank you for requesting the Green Wing example Discovery Assessment Report and Roadmap.`,
@@ -315,6 +328,7 @@ exports.handler = async function handler(event) {
           'Likely cause: CONTACT_FROM_EMAIL domain is not fully verified in Resend for sending to external addresses.',
         ].join('\n'),
         html: greenWingEmail({
+          logoUrl,
           eyebrow: 'Action needed',
           title: 'Sample auto-reply failed',
           intro: `The visitor ${name} (${email}) requested sample documents, but Resend could not email them automatically.`,
@@ -367,6 +381,7 @@ exports.handler = async function handler(event) {
   ].join('\n');
 
   const auditHtml = greenWingEmail({
+    logoUrl,
     eyebrow: 'Green Wing Energy Solutions',
     title: 'Thank you for contacting us',
     intro: `Hi ${name}, thank you for contacting Green Wing Energy Solutions.`,
