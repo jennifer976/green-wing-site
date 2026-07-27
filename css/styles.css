@@ -1,4 +1,4 @@
-/* Green Wing Energy Solutions ù static site styles */
+/* Green Wing Energy Solutions ‚Äî static site styles */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Montserrat:wght@400;500;600&family=Roboto+Slab:wght@300;400;500&display=swap');
 
 :root {
@@ -151,7 +151,7 @@ h4 {
 }
 
 .btn-arrow::after {
-  content: '?';
+  content: '‚Üí';
   font-size: 1.1em;
 }
 
@@ -273,7 +273,7 @@ section { padding: 4.5rem 0; position: relative; z-index: 2; }
 .legislation-grid h4 { margin-top: 1.5rem; }
 .legislation-grid ul { padding-left: 1.25rem; }
 
-/* Client logos ù single-line marquee */
+/* Client logos ‚Äî single-line marquee */
 .logo-marquee-wrap {
   background: #fff;
   padding: 1.75rem 0 2rem;
@@ -1000,7 +1000,7 @@ textarea { min-height: 120px; resize: vertical; }
   margin-bottom: 0.75rem;
 }
 .check-list li::before {
-  content: 'ù';
+  content: '‚úì';
   position: absolute;
   left: 0;
   color: var(--green-accent);
@@ -1123,7 +1123,7 @@ textarea { min-height: 120px; resize: vertical; }
   font-size: 1.5rem;
   color: var(--green-accent);
 }
-.faq-item.open .faq-question::after { content: '?'; }
+.faq-item.open .faq-question::after { content: '‚àí'; }
 .faq-answer {
   max-height: 0;
   overflow: hidden;
@@ -1453,7 +1453,7 @@ textarea { min-height: 120px; resize: vertical; }
 }
 
 .partner-assurance-list li::before {
-  content: '?';
+  content: '‚úì';
   position: absolute;
   left: 0;
   top: 0;
@@ -2016,7 +2016,7 @@ textarea { min-height: 120px; resize: vertical; }
 }
 
 .deliverables-list li::before {
-  content: '?';
+  content: '‚úì';
   position: absolute;
   left: 0;
   color: var(--green-accent);
@@ -2883,7 +2883,7 @@ body.lightbox-open {
   }
 }
 
-/* ùùù Section motifs & dividers (site-wide) ùùù */
+/* ‚Äî‚Äî‚Äî Section motifs & dividers (site-wide) ‚Äî‚Äî‚Äî */
 
 /* Section dividers */
 .section-divider-wave {
@@ -2907,7 +2907,7 @@ body.lightbox-open {
 }
 
 .section-divider-rule::after {
-  content: 'ù';
+  content: '‚Äî';
   position: absolute;
   left: 50%;
   top: 50%;
@@ -3109,7 +3109,7 @@ body.lightbox-open {
   margin: 0;
 }
 
-/* Services ù featured + stack */
+/* Services ‚Äî featured + stack */
 .services-layout {
   display: grid;
   grid-template-columns: 1.15fr 0.85fr;
@@ -3166,7 +3166,7 @@ body.lightbox-open {
 }
 
 .service-featured-points li::before {
-  content: 'ù';
+  content: '‚Äî';
   position: absolute;
   left: 0;
   color: var(--green-accent);
@@ -3225,7 +3225,7 @@ body.lightbox-open {
 }
 
 .roadmap-includes li::before {
-  content: 'ù';
+  content: '‚Äî';
   position: absolute;
   left: 0;
   color: var(--green-accent);
@@ -3591,7 +3591,7 @@ body.lightbox-open {
   mix-blend-mode: multiply;
 }
 
-/* ùù Mobile polish (phones + small tablets) ùù */
+/* ‚Äî‚Äî Mobile polish (phones + small tablets) ‚Äî‚Äî */
 @media (max-width: 640px) {
   :root {
     --header-height: 72px;
