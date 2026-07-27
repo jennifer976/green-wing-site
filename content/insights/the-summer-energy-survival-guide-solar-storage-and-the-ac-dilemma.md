@@ -8,7 +8,7 @@ excerpt: Discover how hotels, pubs, gyms and commercial properties can reduce
   storage. Learn practical strategies to improve efficiency, lower energy bills
   and protect your profits.
 image: /assets/images/wyb3mx_psas-1-.webp
-featured: false
+featured: true
 showScopeInfographic: false
 ---
 It’s good to be back.
